@@ -1,0 +1,21 @@
+<div id="sve_daske">
+<h1>Svi oglasi za Daske</h1>
+<br/>
+<ol class="Daske_oglasi">
+<% @decks.each do |deck| %>
+    <li>
+      <%= deck.marka %>
+      <%= deck.sirina_daske %>
+      <%= deck.koristenost %>
+      <%= deck.starost %>
+      <%= deck.cijena %>
+      <%= link_to "Detalji..", deck %>
+	<br/>
+	<br/>
+    </li>
+  <% end %>
+</ol>
+
+
+
+</div>

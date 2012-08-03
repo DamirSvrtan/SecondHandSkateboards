@@ -1,0 +1,36 @@
+<%= provide(:title, 'Sign Up') %>
+<div id='gore'>
+<h1>Unesi promjene</h1>
+
+</div>
+
+<div class="row">
+
+  <div class="span6 offset3">
+
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name, "Nadimak" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email, "E-mail" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Lozinka:" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Ponovni unos lozinke:" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.label :phone_number, "Telefonski broj:" %>
+      <%= f.text_field :phone_number %>
+
+      <%= f.label :county, "Zupanija:" %>
+      <%= f.select :county, [['Bjelovarsko-bilogorska','Bjelovarsko-bilogorska'],['Brodsko-posavska','Brodsko-posavska'],['Dubrovačko-neretvanska','Dubrovačko-neretvanska'],['Istarska',4],['Karlovačka',5],['Koprivničko-križevačka',6],['Krapinsko-zagorska',7],['Ličko-senjska',8],['Međimurska',9],['Osječko-baranjska',10],['Požeško-slavonska',11],['Primorsko-goranska',12],['Sisačko-moslavačka',13],['Splitsko-dalmatinska','Splitsko-dalmatinska'],['Šibensko-kninska','Šibensko-kninska'],['Varaždinska','Varazdinska'],['Virovitičko-podravska','Viroviticko-podravska'],['Vukovarsko-srijemska','Vukovarsko-srijemska'],['Zadarska','Zadarska'],['Grad Zagreb','Grad Zagreb'],['Zagrebacka','Zagrebacka']], :include_blank => true  %>
+      <br/>
+      <%= f.submit "Spremi promjene", class: "btn btn-inverse btn-large" %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,10 @@
+<li>
+  <span class="content"><%= deck.marka %> <%= deck.sirina_daske %> <%= deck.koristenost %> <%= deck.starost %>  <%= deck.cijena %> <%= link_to "Detalji..", deck %><% if current_user?(deck.user) %>
+    <%= link_to "delete", deck, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: deck.marka %>
+    <%= link_to "edit", edit_deck_path(deck.id) %>
+  <% end %></span>
+  <span class="timestamp">
+  </span>
+</li>

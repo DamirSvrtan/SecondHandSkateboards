@@ -1,4 +1,25 @@
 Shs::Application.routes.draw do
+
+  resources :users
+  resources :sessions, only: [ :new, :create, :destroy]
+  resources :decks, only: [ :create, :destroy, :index, :show, :edit, :update]
+
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+
+  root to: 'static_pages#home'
+
+  match 'sign_up' => 'users#new'
+
+  match 'help' => 'static_pages#help'
+
+  match 'about' => 'static_pages#about'
+
+  match 'contact' => 'static_pages#contact'
+
+  match 'decks' => 'decks#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

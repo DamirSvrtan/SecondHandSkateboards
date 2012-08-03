@@ -1,0 +1,13 @@
+<% provide(:title, 'Home') %>
+<div id="gore">
+<h1>2ndHand Skateboards <%= yield(:title) %> Page </h1>
+<% if signed_in? %>
+<section>
+<%= render 'shared/decks_form' %>
+</section>
+<% else %>
+<p>Welcome skaters :)
+<%= link_to "Sign Up!", 'sign_up' %>
+<% end %>
+</p>
+</div>

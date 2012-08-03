@@ -1,0 +1,20 @@
+<div id="user_ime">
+<%= @user.name %>
+</div>
+<div id="user_info">
+<p>
+<b>E-mail:</b> <%= @user.email %>
+<br/>
+<b>Telefonski broj:</b> <%= @user.phone_number %>
+<br/>
+<b>Zupanija:</b> <%= @user.county %>
+</p>
+
+	<% if @user.decks.any? %>
+		<h3> Daske (<%= @user.decks.count %>)</h3>
+	<ol class="decks">
+                        <%= render @decks %>
+                </ol>
+                <%= will_paginate @decks %>
+    	<% end %> 
+</div>

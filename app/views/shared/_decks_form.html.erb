@@ -1,0 +1,30 @@
+<%= form_for @deck,:url => decks_path, :html => { :multipart => true } do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field" >
+	<%= f.label :marka %>
+	<%= f.text_field :marka %>
+
+	<%= f.label :sirina_daske %>
+	<%= f.text_field :sirina_daske %>
+
+	<%= f.label :koristenost, "Stanje" %>
+	<%= f.text_field :koristenost %>
+
+	<%= f.label :starost %>
+	<%= f.text_field :starost %>
+
+	<%= f.label :cijena %>
+	<%= f.text_field :cijena %>
+	
+	<%= f.label :dodatan_opis, "Dodatan opis:" %>
+	<%= f.text_area :dodatan_opis %>
+	
+	<p>Sa gripom</p>
+        <%= f.check_box :sa_gripom %>
+        <p>Mogucnost zamjene</p>
+        <%= f.check_box :zamjena %>
+
+	<%= f.file_field :slika %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
