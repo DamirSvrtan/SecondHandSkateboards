@@ -1,19 +1,31 @@
 <div id="sve_daske">
-<h1>Svi oglasi za Daske</h1>
+<h1>Daske</h1>
 <br/>
-<ol class="Daske_oglasi">
+<table cellpadding="10">
+<tr style="border-bottom:solid">
+  <td><b>Slika</b></td>
+  <td><b>Marka</b></td>
+  <td><b>Stanje</b></td>
+  <td><b>Starost</b></td>
+  <td><b>Sirina</b></td>
+  <td><b>Cijena</b></td>
+  <td><b>Detalji</b></td>
+</tr>
 <% @decks.each do |deck| %>
-    <li>
-      <%= deck.marka %>
-      <%= deck.sirina_daske %>
-      <%= deck.koristenost %>
-      <%= deck.starost %>
-      <%= deck.cijena %>
-      <%= link_to "Detalji..", deck %>
-	<br/>
-	<br/>
-    </li>
-  <% end %>
+<tr style="border-bottom:solid">
+<% izvor2="/system/decks/slikas/000/000/00"+deck.id.to_s+"/thumb/"+deck.slika_file_name %>
+<td><%= image_tag izvor2, :size => "30x30" %></td>
+<td><%= deck.marka %></td>
+<td><%= deck.koristenost %></td>
+<td><%= deck.starost %></td>
+<td><%= deck.sirina_daske %></td>
+<td><%= deck.cijena %></td>
+<td><%= link_to "Detalji", deck %></td>
+</tr>
+<% end %>
+</table>
+
+
 </ol>
 
 

@@ -14,10 +14,4 @@ validates :user_id, presence: true
 validates :dodatan_opis, :length => { :maximum => 500 }
 
 default_scope order: 'decks.created_at DESC'
-
-attr_accessor :slika_file_name
-attr_accessor :slika_content_type
-attr_accessor :slika_file_size
-attr_accessor :slika_updated_at
-
 end

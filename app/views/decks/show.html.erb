@@ -9,15 +9,14 @@
 <b>Grip ukljucen:</b> <%= bool_na_hr(@deck.sa_gripom) %><br/>
 <b>Mogucnost zamjene:</b> <%= bool_na_hr(@deck.zamjena) %><br/>
 <b>Slika:</b><br/>
-<% izvor="/system/decks/slikas/000/000/0"+@deck.id.to_s+"/medium/" %>
-<%= izvor %>
-<img src="/system/decks/slikas/000/000/019/medium/th-wings-black-300.jpeg">
+<% izvor="/system/decks/slikas/000/000/00"+@deck.id.to_s+"/medium/"+@deck.slika_file_name %>
+<% izvor2="/system/decks/slikas/000/000/00"+@deck.id.to_s+"/thumb/"+@deck.slika_file_name %>
+<%= image_tag (izvor) %>
 <br/><br/>
 <% @user=User.find(@deck.user_id) %>
 <h4>Podatci o korisniku</h4><br/>
 <%= link_to @user.name, @user %><br/>
 <%= @user.email %><br/>
 <%= @user.phone_number %>
-<%= @deck.slika_file_name %>
 </p>
 </div>
