@@ -11,7 +11,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'sqlite3'
 gem 'bcrypt-ruby', '3.0.1'
 
 group :assets do
