@@ -1,13 +1,299 @@
 <% provide(:title, 'Home') %>
-<div id="gore">
-<h1>2ndHand Skateboards <%= yield(:title) %> Page </h1>
-<% if signed_in? %>
-<section>
-<%= render 'shared/decks_form' %>
-</section>
-<% else %>
-<p>Welcome skaters :)
-<%= link_to "Sign Up!", 'sign_up' %>
-<% end %>
-</p>
-</div>
+
+		<div id="container">
+			<img id="skate"src="/images/skate.png" style="position: absolute; left:185px; top:60px;">
+			<img id="skate_hover" class="hover" src="/images/skate hover.png" style="position: absolute; left:185px; top:60px;">
+			
+			<img id="clothing" src="/images/clothing.png" style="position: absolute; right:185px; top:60px;"> 
+			<img id="clothing_hover" class="hover" src="/images/clothing hover.png" style="position: absolute; right:185px; top:60px;">
+
+			<img class="male_ikone" id="daske" src="/images/daske.png" style="position: absolute; left:188px; top:-35px;">
+			<a href="/decks"><img class="male_ikone" id="daske_hover" src="/images/daske hover.png" style="position: absolute; left:188px;top:-35px"></a>
+			
+			<img class="male_ikone" id="kotaci" src="/images/kotaci.png" style="position: absolute; left:100px; top:27px;">
+			<a href="/wheels"><img class="male_ikone" id="kotaci_hover" src="/images/kotaci hover.png" style="position: absolute; left:100px; top:27px;"></a>
+			
+			<img class="male_ikone" id="osovine" src="/images/osovine.png" style="position: absolute; left:80px; top:131px">
+			<a href="/trucks"><img class="male_ikone" id="osovine_hover" src="/images/osovine hover.png" style="position: absolute; left:80px; top:131px"></a>
+			
+			<img class="male_ikone" id="skate_komplet" src="/images/skate komplet.png" style="position: absolute; left:100px; top:235px">
+			<a href="/skates"><img class="male_ikone" id="skate_komplet_hover" src="/images/skate komplet hover.png" style="position: absolute; left:100px; top:235px"></a>
+			
+			<img class="male_ikone" id="ostalo_skate" src="/images/ostalo skate.png" style="position: absolute; left:188px; top: 300px">
+			<a href="/skate_ostalos"><img class="male_ikone" id="ostalo_skate_hover" src="/images/ostalo skate hover.png" style="position: absolute; left:188px; top:300px"></a>
+
+			<img class="male_ikone" id="odjeca" src="/images/odjeca.png" style="position: absolute; right:152px;top:-15px">
+			<a href="/garments"><img class="male_ikone" id="odjeca_hover" src="/images/odjeca hover.png" style="position: absolute; right:152px;top:-15px"></a>
+			
+			<img class="male_ikone" id="obuca" src="/images/obuca.png" style="position: absolute; right:85px;top:78px">
+			<a href="/shoes"><img class="male_ikone" id="obuca_hover" src="/images/obuca hover.png" style="position: absolute; right:85px;top:78px"></a>
+			
+			<img class="male_ikone" id="kape" src="/images/kape.png" style="position: absolute; right:85px;top:185px">
+			<a href="/hats"><img class="male_ikone" id="kape_hover" src="/images/kape  hover.png" style="position: absolute; right:85px;top:185px;"></a>
+			
+			<img class="male_ikone" id="ostalo_clothing" src="/images/ostalo clothing.png" style="position: absolute; right:152px;top:280px">
+			<a href="/clothing_ostalos"><img class="male_ikone" id="ostalo_clothing_hover" src="/images/ostalo clothing hover.png" style="position: absolute;right:152px;top:280px"></a>
+					</div>
+		<div id="reklame">
+			<img id="chill" src="/images/chill logo.png" style="position:absolute; left:10px">
+			<img id="grave" src="/images/grave skateboards.png" style="position:absolute; right:10px;">
+			<a href="http://www.chill.hr/"><img id="chill_hover" src="/images/chill logo hover.png" style="position:absolute;left:10px"></a>
+			<a href="http://graveskateboards.com/"><img id="grave_hover" src="/images/grave skateboards hover.png" style="position:absolute; right:10px;"></a>
+		</div>
+
+
+<script>
+			$('ul#sastrane').hide();
+			var hover=$('img.hover');
+
+			var skate=$('img#skate');
+			var skate_hover=$('img#skate_hover');
+			var clothing=$('img#clothing');
+			var clothing_hover=$('img#clothing_hover');
+			
+			var daske=$('img#daske');
+			var kotaci=$('img#kotaci');
+			var osovine=$('img#osovine');
+			var skate_komplet=$('img#skate_komplet');
+			var ostalo_skate=$('img#ostalo_skate');
+			
+			var odjeca=$('img#odjeca');
+			var obuca=$('img#obuca');
+			var kape=$('img#kape');
+			var ostalo_clothing=$('img#ostalo_clothing');
+			
+			var daske_hover=$('img#daske_hover');
+			var kotaci_hover=$('img#kotaci_hover');
+			var osovine_hover=$('img#osovine_hover');
+			var skate_komplet_hover=$('img#skate_komplet_hover');
+			var ostalo_skate_hover=$('img#ostalo_skate_hover');
+			
+			var odjeca_hover=$('img#odjeca_hover');
+			var obuca_hover=$('img#obuca_hover');
+			var kape_hover=$('img#kape_hover');
+			var ostalo_clothing_hover=$('img#ostalo_clothing_hover');
+			
+			var male_ikone=$('img.male_ikone');
+			
+			var container=$('div#container');
+
+			var reklame=$('div#reklame');
+
+			var chill=$('img#chill');
+			var grave=$('img#grave');
+			var chill_hover=$('img#chill_hover');
+			var grave_hover=$('img#grave_hover');
+			
+			var podtraka_gore=$('div#podtraka_gore');
+
+			var home=$('img#home');
+			var playlist=$('img#playlist');
+			var predaj_oglas=$('img#predaj_oglas');
+			var prijava=$('img#prijava');
+			var registracija=$('img#registracija');
+			
+			var home_hover=$('img#home_hover');
+			var playlist_hover=$('img#playlist_hover');
+			var predaj_oglas_hover=$('img#predaj_oglas_hover');
+			var prijava_hover=$('img#prijava_hover');
+			var registracija_hover=$('img#registracija_hover');
+			
+			chill_hover.hide();
+			grave_hover.hide();
+			
+			hover.hide();
+			male_ikone.hide();
+			
+			
+			
+			$(skate).on('mouseenter',function(){
+	 		$(skate_hover).show();
+	 		
+	 		$(daske).show();
+	 		$(kotaci).show();
+	 		$(osovine).show();
+	 		$(skate_komplet).show();
+	 		$(ostalo_skate).show();
+	 		
+	 		$(odjeca).hide();
+	 		$(obuca).hide();
+	 		$(kape).hide();
+	 		$(ostalo_clothing).hide();
+	 		
+	 		$(odjeca_hover).hide();
+	 		$(obuca_hover).hide();
+	 		$(kape_hover).hide();
+	 		$(ostalo_clothing_hover).hide();
+	 		
+	 		$(clothing_hover).hide();
+	 		})
+	 		
+	 		
+	 		
+	 		$(clothing).on('mouseenter',function(){
+	 		$(clothing_hover).show();
+	 		
+	 		$(odjeca).show();
+	 		$(obuca).show();
+	 		$(kape).show();
+	 		$(ostalo_clothing).show();
+	 		
+	 		$(daske).hide();
+	 		$(kotaci).hide();
+	 		$(osovine).hide();
+	 		$(skate_komplet).hide();
+	 		$(ostalo_skate).hide();
+	 		
+	 		$(daske_hover).hide();
+	 		$(kotaci_hover).hide();
+	 		$(osovine_hover).hide();
+	 		$(skate_komplet_hover).hide();
+	 		$(ostalo_skate_hover).hide();
+	 		
+	 		$(skate_hover).hide();
+	 		})
+	 		
+	 		
+	 		
+	 		$(container).on('mouseleave',function(){
+	 		$(clothing_hover).hide();
+	 		$(skate_hover).hide();
+	 		
+	 	
+	 		
+	 		$(male_ikone).hide();
+	 		})
+	 		
+	 		$(daske).on('mouseenter',function(){
+	 		$(daske_hover).show();
+	 		$(kotaci_hover).hide();
+	 		$(osovine_hover).hide();
+	 		$(skate_komplet_hover).hide();
+	 		$(ostalo_skate_hover).hide();
+	 		})
+	 		
+	 		$(kotaci).on('mouseenter',function(){
+	 		$(daske_hover).hide();
+	 		$(kotaci_hover).show();
+	 		$(osovine_hover).hide();
+	 		$(skate_komplet_hover).hide();
+	 		$(ostalo_skate_hover).hide();
+	 		})
+	 		
+	 		$(osovine).on('mouseenter',function(){
+	 		$(daske_hover).hide();
+	 		$(kotaci_hover).hide();
+	 		$(osovine_hover).show();
+	 		$(skate_komplet_hover).hide();
+	 		$(ostalo_skate_hover).hide();
+	 		})
+	 		
+	 		$(skate_komplet).on('mouseenter',function(){
+	 		$(daske_hover).hide();
+	 		$(kotaci_hover).hide();
+	 		$(osovine_hover).hide();
+	 		$(skate_komplet_hover).show();
+	 		$(ostalo_skate_hover).hide();
+	 		})
+	 		
+	 		$(ostalo_skate).on('mouseenter',function(){
+	 		$(daske_hover).hide();
+	 		$(kotaci_hover).hide();
+	 		$(osovine_hover).hide();
+	 		$(skate_komplet_hover).hide();
+	 		$(ostalo_skate_hover).show();
+	 		})
+	 		
+	 		$(odjeca).on('mouseenter',function(){
+	 		$(odjeca_hover).show();
+	 		$(obuca_hover).hide();
+	 		$(kape_hover).hide();
+	 		$(ostalo_clothing_hover).hide();
+	 		})
+	 		
+	 		$(obuca).on('mouseenter',function(){
+	 		$(odjeca_hover).hide();
+	 		$(obuca_hover).show();
+	 		$(kape_hover).hide();
+	 		$(ostalo_clothing_hover).hide();
+	 		})
+	 		
+	 		$(kape).on('mouseenter',function(){
+	 		$(odjeca_hover).hide();
+	 		$(obuca_hover).hide();
+	 		$(kape_hover).show();
+	 		$(ostalo_clothing_hover).hide();
+	 		})
+	 		
+	 		$(ostalo_clothing).on('mouseenter',function(){
+	 		$(odjeca_hover).hide();
+	 		$(obuca_hover).hide();
+	 		$(kape_hover).hide();
+	 		$(ostalo_clothing_hover).show();
+	 		})
+	 		
+	 		$(chill).on('mouseenter',function(){
+	 		$(chill_hover).show();
+	 		$(grave_hover).hide();
+	 		})
+	 		
+	 		$(grave).on('mouseenter',function(){
+	 		$(grave_hover).show();
+	 		$(chill_hover).hide();
+	 		})
+	 		
+	 		$(reklame).on('mouseleave',function(){
+	 		$(grave_hover).hide();
+	 		$(chill_hover).hide();
+	 		})
+	 		
+	 		$(home).on('mouseenter',function(){
+	 		$(home_hover).show();
+	 		$(playlist_hover).hide();
+	 		$(predaj_oglas_hover).hide();
+	 		$(prijava_hover).hide();
+	 		$(registracija_hover).hide();
+	 		})
+	 		
+	 		$(playlist).on('mouseenter',function(){
+	 		$(home_hover).hide();
+	 		$(playlist_hover).show();
+	 		$(predaj_oglas_hover).hide();
+	 		$(prijava_hover).hide();
+	 		$(registracija_hover).hide();
+	 		})
+	 		
+	 		$(predaj_oglas).on('mouseenter',function(){
+	 		$(home_hover).hide();
+	 		$(playlist_hover).hide();
+	 		$(predaj_oglas_hover).show();
+	 		$(prijava_hover).hide();
+	 		$(registracija_hover).hide();
+	 		})
+	 		
+	 		$(prijava).on('mouseenter',function(){
+	 		$(home_hover).hide();
+	 		$(playlist_hover).hide();
+	 		$(predaj_oglas_hover).hide();
+	 		$(prijava_hover).show();
+	 		$(registracija_hover).hide();
+	 		})
+	 		
+	 		$(registracija).on('mouseenter',function(){
+	 		$(home_hover).hide();
+	 		$(playlist_hover).hide();
+	 		$(predaj_oglas_hover).hide();
+	 		$(prijava_hover).hide();
+	 		$(registracija_hover).show();
+	 		})
+	 		
+	 		$(podtraka_gore).on('mouseleave',function(){
+	 		$(home_hover).hide();
+	 		$(playlist_hover).hide();
+	 		$(predaj_oglas_hover).hide();
+	 		$(prijava_hover).hide();
+	 		$(registracija_hover).hide();
+	 		})
+	 		
+	 		
+		</script>

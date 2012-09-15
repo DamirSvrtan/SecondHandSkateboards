@@ -1,0 +1,55 @@
+<div id="skate_kompleti_lista">
+<h1 id="naslov">Skate kompleti</h1>
+<br/>
+<table id="skate_kompleti_table", class="fixed_table" style="margin-top:-10px;">
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+<tr id="prva_traka", style="height:30px;">
+  <th>Slika</th>
+  <th><%= sortable "daska_marka", "Marka Daske" %></th>
+  <th><%= sortable "koristenost", "Stanje" %></th> 
+  <th><%= sortable "daska_marka", "Marka Daske" %></th>
+  <th><%= sortable "daska_sirina", "Sirina Daske" %></th>
+  <th><%= sortable "osovine_marka", "Marka Kotaci" %></th>
+  <th><%= sortable "osovine_sirina", "Sirina Osovine" %></th>
+  <th><%= sortable "kotaci_marka", "Marka Kotaci" %></th>
+  <th><%= sortable "kotaci_radijus", "Radijus Kotaci" %></th>
+  <th><%= sortable "cijena" %></th>
+  <th><b>Detalji</b></th>
+</tr>
+<% for skate in @skates %>
+<tr style="border-bottom:thin solid;height:50px;">
+
+<% if skate.slika_file_name %>
+<% string_id = add_zeros(skate.id) %>
+<% izvor2="/system/skates/slikas/000/000/"+string_id+"/thumb/"+skate.slika_file_name %>
+<% else %>
+<% izvor2="/images/no photo thumb.png" %>
+<% end %>
+
+<td><%= image_tag izvor2, :size => "30x30", :class => "za_povecat" %></td>
+
+<td><%= skate.daska_marka %></td>
+<td><%= skate.koristenost %></td>
+<td><%= skate.daska_marka %></td>
+<td><%= skate.daska_sirina %></td>
+<td><%= skate.osovine_marka %></td>
+<td><%= skate.osovine_sirina %></td>
+<td><%= skate.kotaci_marka %></td>
+<td><%= skate.kotaci_radijus %></td>
+<td><%= skate.cijena %></td>
+<td><%= link_to "Detalji", skate%></td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate @skates %>
+</div>

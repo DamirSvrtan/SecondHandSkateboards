@@ -1,0 +1,23 @@
+<% provide(:title, 'Objavi oglas') %>
+<div id="gore">
+<h3>Ovdje ce se odabrati oglasi</h3>
+
+<% if signed_in? %>
+<section>
+<%= render 'shared/decks_form' %>
+</section>
+<div id="lijevo">
+<section>
+<%= render 'shared/trucks_form' %>
+</section>
+</div>
+
+<% else %>
+<p>Welcome skaters :)
+<%= link_to "Sign Up!", 'sign_up' %>
+<% end %>
+</div>
+<script>
+$('ul#sastrane').hide();
+</script>
+

@@ -1,15 +1,280 @@
 @import "bootstrap";
 
+.fixed_table { table-layout:fixed; }
+.fixed_table th { 
+overflow: hidden;
+font-family:Tahoma;
+font-size:14px;
+}
+.fixed_table td { 
+font-family:Tahoma;
+font-size:14px;
+}
+#traka_gore{
+	width:101%;
+background-image: linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
+background-image: -o-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
+background-image: -moz-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
+background-image: -webkit-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
+background-image: -ms-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.49, rgb(110,110,110)),
+	color-stop(0.5, rgb(47,47,47))
+);
+	height:40px;
+	margin-top:0px;
+	margin-left:-10px;
+}
+#daske_lista{
+position:relative;
+border:1px solid black;
+top:100px;
+min-width:300px;
+max-width:500px;
+left:50%;
+margin-left:-250px;
+background-color:#6e6e6e;
+
+-webkit-border-top-left-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+#skate_kompleti_lista{
+position:relative;
+border:1px solid black;
+top:100px;
+min-width:300px;
+max-width:800px;
+left:50%;
+margin-left:-250px;
+background-color:#6e6e6e;
+-webkit-border-top-left-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+#kontenjer{
+position:relative;
+border:1px solid black;
+width:1000px;
+left:50%;
+margin-left:-500px;
+margin-top:100px;
+}
+#naslov{
+text-align:center;
+margin-top:5px;
+}
+
+div.pagination{
+text-align:center;
+}
+#sastrane{
+list-style-type:none;
+width:150px;
+position:absolute;
+top:130px;
+left:50%;
+margin-left:-425px;
+}
+
+.sporedni_sastrane{
+height:22px;
+padding-top:3px;
+margin-top:10px;
+border:1px solid #ab2424;
+text-align:center;
+width:150px;
+color:white;
+font-weight:bold;
+
+background-image: linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -o-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -moz-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -webkit-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -ms-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.32, #C62B35),
+	color-stop(0.61, #C20E1A)
+);
+
+-webkit-border-bottom-right-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+border-bottom-right-radius: 10px;
+}
+
+.glavni_sastrane{
+padding-top:8px;
+margin-top:10px;
+border:1px solid 6e6e6e;
+text-align:center;
+color:white;
+width:150px;
+font-weight:bold;
+height:25px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topright: 10px;
+border-top-right-radius: 10px;
+background-color:#6e6e6e;
+}
+
+td{
+	text-align:center;
+}
+#prva_traka{
+	background-color:#2f2f2f;
+}
+#shs{
+	position:absolute;
+	margin-top:45px;
+	left:50%;
+	margin-left:-440px;
+
+	font-family:Tahoma;
+	font-size:14px;
+	color:#979797;
+}
+#predaj_oglas{
+	position:absolute;
+	left:50%;
+	margin-left:190px;
+	margin-top:50px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	width:130px;
+	height:35px;
+	
+	text-align:center;
+	vertical-align:text-bottom;
+
+background-image: linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -o-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -moz-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -webkit-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: -ms-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.32, #C62B35),
+	color-stop(0.61, #C20E1A)
+);
+}
+
+#predaj_oglas h4{
+color:white;
+margin-top:10px;
+font-family:Tahoma;
+font-weight:bold;
+}
+#logo_puknuti{
+	position:absolute;
+	left:50%;
+	margin-left:-150px;
+	margin-top:20px;
+}
+#container{
+	position:relative;
+
+	height:480px;
+	width:900px;
+	top:100px;
+	left:50%;
+	margin-left:-450px;
+}
+
+#reklame{
+	position:relative;
+
+	width:380px;
+	height:95px;
+	left:50%;
+	margin-left:-190px;
+	top:50px;
+
+}
+
+#navlist li
+{
+display: inline;
+list-style-type: none;
+padding-right: 15px;
+font-size:13px;
+font-family:Tahoma;
+font-weight:bold;
+color:white;
+}
+
+
+#navlist{
+	position: absolute;
+	top:20px;
+	left:50%;
+	margin-left:-520px;
+}
+#navlist1 li
+{
+	display: inline;
+	list-style-type: none;
+	padding-right: 15px;
+	font-family:Tahoma;
+	font-weight: bold;
+	color:white;
+	font-size:13px;
+}
+#navlist1{
+	position: absolute;
+	top:20px;
+	right:10px;
+	left:50%;
+	margin-left:155px;
+}
+#navlist a:link {color:#FFFFFF;} /* unvisited link */
+#navlist a:visited {color:#FFFFFF;}  /* visited link */
+#navlist a:hover {color:#c62e35;text-decoration:none;}  /* mouse over link */
+#navlist a:active {color:#c62e35;}
+#navlist1 a:link {color:#FFFFFF;} /* unvisited link */
+#navlist1 a:visited {color:#FFFFFF;}  /* visited link */
+#navlist1 a:hover {color:#c62e35;text-decoration:none;}  /* mouse over link */
+#navlist1 a:active {color:#c62e35;}
+
+a:link {color:#c20e1a;} /* unvisited link */
+a:visited {color:#c20e1a;}  /* visited link */
+a:hover {color:#c20e1a;text-decoration:none;}  /* mouse over link */
+a:active {color:#c20e1a;}
+
+#prva_traka a:link {color:white;} /* unvisited link */
+#prva_traka a:visited {color:white;}  /* visited link */
+#prva_traka a:hover {color:white;text-decoration:none;}  /* mouse over link */
+#prva_traka a:active {color:white;}
+
+
+a { text-decoration:none; }
 	#gore
         {
                 position:absolute;
                 margin-left:250px;
-                margin-top:52px;
+                margin-top:82px;
         }
 
         body
         {
-                background-color:#D0D0D0 ;
+                background-color:white ;
         }
 
         #header
@@ -107,17 +372,33 @@
 	border-color:#E0E0E0;
 	}
 	#sve_daske{
+	border:1px solid black;
 	position: absolute;
-        margin-top:60px;
-        margin-left:250px;
+        margin-top:110px;
+        margin-left:450px;
+	
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 	}
 	
 	#pojedinacna_daska{
 	position: absolute;
-	margin-top:60px;
+	margin-top:80px;
 	margin-left:250px;
 	}
 	
 	#deck_dodatan_opis{
 	height:103px;
+	}
+	#wheel_dodatan_opis{
+        height:103px;
+        }
+
+	#lijevo{
+	margin-left:400px;
+	margin-top:-710px;
 	}

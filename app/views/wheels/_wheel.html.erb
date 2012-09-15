@@ -1,0 +1,10 @@
+<li>
+  <span class="content"><%= wheel.marka %> <%= wheel.sirina_daske %> <%= wheel.koristenost %> <%= wheel.starost %>  <%= wheel.cijena %> <%= link_to "Detalji..", wheel %><% if current_user?(wheel.user) %>
+    <%= link_to "delete", wheel, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: wheel.marka %>
+    <%= link_to "edit", edit_wheel_path(wheel.id) %>
+  <% end %></span>
+  <span class="timestamp">
+  </span>
+</li>

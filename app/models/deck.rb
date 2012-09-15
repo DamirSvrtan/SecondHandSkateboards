@@ -13,5 +13,5 @@ validates :cijena, presence: true
 validates :user_id, presence: true
 validates :dodatan_opis, :length => { :maximum => 500 }
 
-default_scope order: 'decks.created_at DESC'
+#default_scope order: 'decks.created_at DESC'
 end

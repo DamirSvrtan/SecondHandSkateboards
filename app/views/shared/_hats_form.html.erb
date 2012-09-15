@@ -1,0 +1,32 @@
+<%= form_for @hat,:url => hats_path, :html => { :multipart => true } do |d| %>
+  <%= render 'shared/error_messages', object: d.object %>
+  <div class="field" >
+	<%= d.label :naslov %>
+        <%= d.text_field :naslov %>
+ 
+        <%= d.label :marka %>
+        <%= d.text_field :marka %>
+
+        <%= d.label :velicina %>
+        <%= d.text_field :velicina %>
+
+        <%= d.label :koristenost, "Stanje" %>
+        <%= d.text_field :koristenost %>
+
+        <%= d.label :starost %>
+        <%= d.text_field :starost %>
+
+        <%= d.label :cijena %>
+        <%= d.text_field :cijena %>
+
+        <%= d.label :dodatan_opis, "Dodatan opis:" %>
+        <%= d.text_area :dodatan_opis %>
+
+        <p>Mogucnost zamjene</p>
+        <%= d.check_box :zamjena %>
+	<br/>
+        <%= d.file_field :slika %>
+  </div>
+  <%= d.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
+

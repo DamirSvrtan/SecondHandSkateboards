@@ -37,4 +37,9 @@ Shs::Application.configure do
 
   Paperclip.options[:command_path] = "/usr/bin/"
 
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+  # set delivery method to :smtp, :sendmail or :test
+  config.action_mailer.delivery_method = :smtp
+
 end

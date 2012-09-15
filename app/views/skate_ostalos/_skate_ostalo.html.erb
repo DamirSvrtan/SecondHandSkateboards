@@ -1,0 +1,10 @@
+<li>
+  <span class="content"><%= skate.daska_marka %> <%= skate.daska_sirina %> <%= skate.osovine_marka %> <%= skate.osovine_sirina %> <%= skate.kotaci_marka %> <%= skate.kotaci_radijus %> <%= skate.sa_gripom %> <%= skate.koristenost %> <%= skate.cijena %> <%= link_to "Detalji..", skate %><% if current_user?(skate.user) %>
+    <%= link_to "delete", skate, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: skate.marka %>
+    <%= link_to "edit", edit_skate_path(skate.id) %>
+  <% end %></span>
+  <span class="timestamp">
+  </span>
+</li>

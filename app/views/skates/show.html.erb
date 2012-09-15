@@ -1,0 +1,20 @@
+<div id="pojedinacna_daska">
+<h3>Skate komplet <%= @skate.daska_marka %> <%= @skate.daska_sirina %>mm <%= @skate.osovine_sirina %></h3>
+<br/>
+<p><b>Marka daske:</b> <%= @skate.daska_marka %><br/>
+<b>Sirina daske:</b> <%= @skate.daska_sirina %><br/>
+<b>Marka osovina:</b> <%= @skate.osovine_marka %><br/>
+<b>Marka kotaca:</b> <%= @skate.kotaci_marka %><br/>
+<b>Cijena:</b> <%= @skate.cijena %><br/>
+<b>Slika:</b><br/>
+<% izvor="/system/skates/slikas/000/000/00"+@skate.id.to_s+"/medium/"+@skate.slika_file_name %>
+<% izvor2="/system/skates/slikas/000/000/00"+@skate.id.to_s+"/thumb/"+@skate.slika_file_name %>
+<%= image_tag (izvor) %>
+<br/><br/>
+<% @user=User.find(@skate.user_id) %>
+<h4>Podatci o korisniku</h4><br/>
+<%= link_to @user.name, @user %><br/>
+<%= @user.email %><br/>
+<%= @user.phone_number %>
+</p>
+</div>

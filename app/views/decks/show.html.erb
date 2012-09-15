@@ -1,5 +1,5 @@
 <div id="pojedinacna_daska">
-<h3>Daska <%= @deck.marka%>, <%= @deck.sirina_daske %>"</h3>
+<h3>Daska <%= @deck.marka%> <%= @deck.sirina_daske %>"</h3>
 <br/>
 <p><b>Marka:</b> <%= @deck.marka %><br/>
 <b>Sirina daske:</b> <%= @deck.sirina_daske %><br/>
@@ -9,9 +9,11 @@
 <b>Grip ukljucen:</b> <%= bool_na_hr(@deck.sa_gripom) %><br/>
 <b>Mogucnost zamjene:</b> <%= bool_na_hr(@deck.zamjena) %><br/>
 <b>Slika:</b><br/>
+<% if @deck.slika_file_name %>
 <% izvor="/system/decks/slikas/000/000/00"+@deck.id.to_s+"/medium/"+@deck.slika_file_name %>
 <% izvor2="/system/decks/slikas/000/000/00"+@deck.id.to_s+"/thumb/"+@deck.slika_file_name %>
 <%= image_tag (izvor) %>
+<% end %>
 <br/><br/>
 <% @user=User.find(@deck.user_id) %>
 <h4>Podatci o korisniku</h4><br/>

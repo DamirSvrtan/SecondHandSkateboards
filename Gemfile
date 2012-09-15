@@ -25,5 +25,8 @@ end
   gem 'bootstrap-will_paginate', '0.0.6'
 
   gem "paperclip", "~> 3.0"
+
+  gem 'client_side_validations', '~>3.2.0.beta.3'
+  gem 'simple_form', '2.0'
 end
 

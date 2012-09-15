@@ -1,10 +1,12 @@
 class DecksController < ApplicationController
-  before_filter :signed_in_user
   before_filter :correct_user, only: [:destroy, :edit, :update]
+  helper_method :sort_column, :sort_direction
 
   def index
-	@decks = Deck.all
+	@decks = Deck.order(sort_column + " " + sort_direction)
 	@users = User.all
+	@decks = @decks.paginate(:page => params[:page], :per_page => 7)
+
   end
 
   def show
@@ -28,11 +30,16 @@ class DecksController < ApplicationController
 
   def create
 	@deck = current_user.decks.build(params[:deck])
+	@wheel = current_user.wheels.build(params[:wheel])
+	@truck = current_user.trucks.build(params[:truck])
+	@skate = current_user.skates.build(params[:skate])
+	@skate_ostalo = current_user.skate_ostalos.build(params[:skate_ostalo])
+
     if @deck.save
       flash[:success] = "Napravljen oglas!"
       redirect_to decks_path
     else
-      render 'static_pages/home'
+      render 'static_pages/objavi'
     end
   end
 
@@ -48,5 +55,13 @@ private
       @deck = current_user.decks.find_by_id(params[:id])
       redirect_to root_path if @deck.nil?
     end
+
+     def sort_column
+   	 Deck.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+     end
+
+     def sort_direction
+    	%w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+     end
 
 end

@@ -1,0 +1,39 @@
+<%= form_for @skate,:url => skates_path, :html => { :multipart => true } do |d| %>
+  <%= render 'shared/error_messages', object: d.object %>
+  <div class="field" >
+        <%= d.label :daska_marka %>
+        <%= d.text_field :daska_marka %>
+
+        <%= d.label :daska_sirina %>
+        <%= d.text_field :daska_sirina %>
+
+        <%= d.label :osovine_marka %>
+        <%= d.text_field :osovine_marka %>
+
+        <%= d.label :osovine_sirina %>
+        <%= d.text_field :osovine_sirina %>
+
+        <%= d.label :kotaci_marka %>
+        <%= d.text_field :kotaci_marka %>
+
+        <%= d.label :kotaci_radijus %>
+        <%= d.text_field :kotaci_radijus %>
+
+        <%= d.label :koristenost, "Stanje" %>
+        <%= d.text_field :koristenost %>
+
+        <%= d.label :cijena %>
+        <%= d.text_field :cijena %>
+
+        <%= d.label :dodatan_opis, "Dodatan opis:" %>
+        <%= d.text_area :dodatan_opis %>
+
+        <p>Grip</p>
+        <%= d.check_box :sa_gripom %>
+        <br/>
+        <%= d.file_field :slika %>
+  </div>
+  <%= d.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
+
+

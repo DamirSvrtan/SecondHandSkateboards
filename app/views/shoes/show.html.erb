@@ -1,0 +1,21 @@
+<div id="pojedinacna_daska">
+<h3>Odjevni predmet <%= @shoe.marka%> <%= @shoe.velicina %> </h3>
+<br/>
+<p><b>Marka:</b> <%= @shoe.marka %><br/>
+<b>Velicina:</b> <%= @shoe.velicina %><br/>
+<b>Stanje:</b> <%= @shoe.koristenost %><br/>
+<b>Starost:</b> <%= @shoe.starost %><br/>
+<b>Cijena:</b> <%= @shoe.cijena %><br/>
+<b>Mogucnost zamjene:</b> <%= bool_na_hr(@shoe.zamjena) %><br/>
+<b>Slika:</b><br/>
+<% izvor="/system/shoes/slikas/000/000/00"+@shoe.id.to_s+"/medium/"+@shoe.slika_file_name %>
+<% izvor2="/system/shoes/slikas/000/000/00"+@shoe.id.to_s+"/thumb/"+@shoe.slika_file_name %>
+<%= image_tag (izvor) %>
+<br/><br/>
+<% @user=User.find(@shoe.user_id) %>
+<h4>Podatci o korisniku</h4><br/>
+<%= link_to @user.name, @user %><br/>
+<%= @user.email %><br/>
+<%= @user.phone_number %>
+</p>
+</div>

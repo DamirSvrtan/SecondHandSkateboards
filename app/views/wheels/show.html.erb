@@ -1,0 +1,21 @@
+<div id="pojedinacna_daska">
+<h3>Kotaci <%= @wheel.marka%> <%= @wheel.radijus %>mm</h3>
+<br/>
+<p><b>Marka:</b> <%= @wheel.marka %><br/>
+<b>Radijus:</b> <%= @wheel.radijus %><br/>
+<b>Stanje:</b> <%= @wheel.koristenost %><br/>
+<b>Starost:</b> <%= @wheel.starost %><br/>
+<b>Cijena:</b> <%= @wheel.cijena %><br/>
+<b>Mogucnost zamjene:</b> <%= bool_na_hr(@wheel.zamjena) %><br/>
+<b>Slika:</b><br/>
+<% izvor="/system/wheels/slikas/000/000/00"+@wheel.id.to_s+"/medium/"+@wheel.slika_file_name %>
+<% izvor2="/system/wheels/slikas/000/000/00"+@wheel.id.to_s+"/thumb/"+@wheel.slika_file_name %>
+<%= image_tag (izvor) %>
+<br/><br/>
+<% @user=User.find(@wheel.user_id) %>
+<h4>Podatci o korisniku</h4><br/>
+<%= link_to @user.name, @user %><br/>
+<%= @user.email %><br/>
+<%= @user.phone_number %>
+</p>
+</div>

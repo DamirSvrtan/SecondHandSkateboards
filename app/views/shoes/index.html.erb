@@ -1,0 +1,39 @@
+<div id="daske_lista">
+<h1 id="naslov">Tenisice</h1>
+<br/>
+<table id="shoe_table", class="fixed_table", style="margin-top:-10px;">
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+    <col width="100px" />
+<tr id="prva_traka", style="height:30px;">
+  <th>Slika</th>
+  <th><%= sortable "marka" %></th>
+  <th><%= sortable "koristenost", "Stanje" %></th> 
+  <th><%= sortable "velicina", "Velicina" %></th>
+  <th><%= sortable "cijena" %></th>
+  <th><b>Detalji</b></th>
+</tr>
+<% for shoe in @shoes %>
+<tr style="border-bottom:thin solid;height:50px;">
+
+<% if shoe.slika_file_name %>
+<% string_id = add_zeros(shoe.id) %>
+<% izvor2="/system/shoes/slikas/000/000/"+string_id+"/thumb/"+shoe.slika_file_name %>
+<% else %>
+<% izvor2="/images/no photo thumb.png" %>
+<% end %>
+
+<td><%= image_tag izvor2, :size => "30x30", :class => "za_povecat" %></td>
+<td><%= shoe.marka %></td>
+<td><%= shoe.koristenost %></td>
+<td><%= shoe.velicina %></td>
+<td><%= shoe.cijena %></td>
+<td><%= link_to "Detalji", shoe %></td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate @shoes %>
+</div>

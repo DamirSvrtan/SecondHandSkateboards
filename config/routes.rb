@@ -1,8 +1,18 @@
 Shs::Application.routes.draw do
 
+
   resources :users
   resources :sessions, only: [ :new, :create, :destroy]
   resources :decks, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :wheels, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :trucks, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :skates, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :skate_ostalos, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :shoes, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :garments, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :clothing_ostalos, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :hats, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :password_resets  
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
@@ -16,9 +26,27 @@ Shs::Application.routes.draw do
 
   match 'about' => 'static_pages#about'
 
+  match 'objavi' => 'static_pages#objavi'
+
   match 'contact' => 'static_pages#contact'
 
   match 'decks' => 'decks#index'
+
+  match 'wheels' => 'wheels#index'
+
+  match 'trucks' => 'trucks#index'
+
+  match 'skates' => 'skates#index'
+
+  match 'skate_ostalos' => 'skate_ostalos#index'
+
+  match 'shoes' => 'shoes#index'
+
+  match 'garments' => 'garments#index'
+
+  match 'clothing_ostalos' => 'clothing_ostalos#index'
+
+  match 'hats' => 'hats#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

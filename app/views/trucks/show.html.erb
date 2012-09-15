@@ -1,0 +1,21 @@
+<div id="pojedinacna_daska">
+<h3>Kotaci <%= @truck.marka%> <%= @truck.sirina1 %>mm <%= @truck.visina %></h3>
+<br/>
+<p><b>Marka:</b> <%= @truck.marka %><br/>
+<b>Sirina:</b> <%= @truck.sirina1 %><br/>
+<b>Stanje:</b> <%= @truck.koristenost %><br/>
+<b>Starost:</b> <%= @truck.starost %><br/>
+<b>Cijena:</b> <%= @truck.cijena %><br/>
+<b>Mogucnost zamjene:</b> <%= bool_na_hr(@truck.zamjena) %><br/>
+<b>Slika:</b><br/>
+<% izvor="/system/trucks/slikas/000/000/00"+@truck.id.to_s+"/medium/"+@truck.slika_file_name %>
+<% izvor2="/system/trucks/slikas/000/000/00"+@truck.id.to_s+"/thumb/"+@truck.slika_file_name %>
+<%= image_tag (izvor) %>
+<br/><br/>
+<% @user=User.find(@truck.user_id) %>
+<h4>Podatci o korisniku</h4><br/>
+<%= link_to @user.name, @user %><br/>
+<%= @user.email %><br/>
+<%= @user.phone_number %>
+</p>
+</div>

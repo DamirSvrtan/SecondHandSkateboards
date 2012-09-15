@@ -1,0 +1,10 @@
+<li>
+  <span class="content"><%= truck.marka %> <%= truck.sirina1 %> <%= truck.sirina2 %> <%= truck.visina %> <%= truck.koristenost %> <%= truck.starost %>  <%= truck.cijena %> <%= link_to "Detalji..", truck %><% if current_user?(truck.user) %>
+    <%= link_to "delete", truck, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: truck.marka %>
+    <%= link_to "edit", edit_truck_path(truck.id) %>
+  <% end %></span>
+  <span class="timestamp">
+  </span>
+</li>

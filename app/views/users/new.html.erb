@@ -8,7 +8,7 @@
 
   <div class="span6 offset3">
 
-    <%= form_for(@user) do |f| %>
+    <%= form_for @user, do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <b><%= f.label :name , "Nadimak" %></b>
@@ -34,3 +34,7 @@
       <p>Registrirani korisnik? <%= link_to "Prijavi se!", signin_path %></p>
   </div>
 </div>
+<script>
+$('ul#sastrane').hide();
+</script>
+
