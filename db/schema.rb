@@ -201,4 +201,6 @@ ActiveRecord::Schema.define(:version => 20120910140703) do
     t.datetime "slika_updated_at"
   end
 
+  add_index "wheels", ["user_id", "created_at"], :name => "index_wheels_on_user_id_and_created_at"
+
 end

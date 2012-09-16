@@ -37,7 +37,7 @@ min-width:300px;
 max-width:500px;
 left:50%;
 margin-left:-250px;
-background-color:#6e6e6e;
+background-color:#D2CECE;
 
 -webkit-border-top-left-radius: 10px;
 -webkit-border-bottom-left-radius: 10px;
@@ -54,7 +54,7 @@ min-width:300px;
 max-width:800px;
 left:50%;
 margin-left:-250px;
-background-color:#6e6e6e;
+background-color:#D2CECE;
 -webkit-border-top-left-radius: 10px;
 -webkit-border-bottom-left-radius: 10px;
 -moz-border-radius-topleft: 10px;
@@ -134,8 +134,13 @@ background-color:#6e6e6e;
 td{
 	text-align:center;
 }
+input:focus, textarea:focus {
+border-color:#c20e1a;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(194, 14, 26, 0.6);
+}
 #prva_traka{
 	background-color:#2f2f2f;
+	color:white;
 }
 #shs{
 	position:absolute;
@@ -258,10 +263,10 @@ a:visited {color:#c20e1a;}  /* visited link */
 a:hover {color:#c20e1a;text-decoration:none;}  /* mouse over link */
 a:active {color:#c20e1a;}
 
-#prva_traka a:link {color:white;} /* unvisited link */
-#prva_traka a:visited {color:white;}  /* visited link */
-#prva_traka a:hover {color:white;text-decoration:none;}  /* mouse over link */
-#prva_traka a:active {color:white;}
+#prva_traka a:link {color:#fa3f4b;} /* unvisited link */
+#prva_traka a:visited {color:#fa3f4b;}  /* visited link */
+#prva_traka a:hover {color:#fa3f4b;text-decoration:none;}  /* mouse over link */
+#prva_traka a:active {color:#fa3f4b;}
 
 
 a { text-decoration:none; }
