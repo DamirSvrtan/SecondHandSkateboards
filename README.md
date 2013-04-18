@@ -2,16 +2,13 @@
 <p style="font-size:14px">A classified ad application for skateboarding equipment I did with my friend Andrej Karavanic.</p>
 
 
-<h2> -------------------</h2>
 <h2>LOGIN PAGE:</h2>
 <img src="http://i.imgur.com/NN66Psh.png"></img>
 
-<h2> -------------------</h2>
 <h2>FRONT PAGE:</h2>
 
 <img src="http://i.imgur.com/oTugt5l.png"></img>
 
-<h2> ---------------------------</h2>
 <h2>CREATE A NEW AD:</h2>
 
 <img src="http://i.imgur.com/REbUvpH.png"></img>
