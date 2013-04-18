@@ -1,7 +1,9 @@
 Shs::Application.routes.draw do
 
 
-  resources :users
+  resources :users do
+	get 'identifier_exists', :on => :collection
+  end
   resources :sessions, only: [ :new, :create, :destroy]
   resources :decks, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
   resources :wheels, only: [ :new, :create, :destroy, :index, :show, :edit, :update]

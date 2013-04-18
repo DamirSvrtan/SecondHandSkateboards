@@ -2,22 +2,15 @@ class UsersController < ApplicationController
 	before_filter :signed_in_user, only: [:edit, :update]
 	before_filter :correct_user, only: [:edit, :delete, :update]
   def show
-
 	@user=User.find(params[:id])
-
 	@decks = @user.decks
 	@wheels = @user.wheels
-
-
         @skates = @user.skates
         @trucks = @user.trucks
-
         @garments = @user.garments
         @shoes = @user.shoes
-
         @hats = @user.hats
         @clothing_ostalos = @user.clothing_ostalos
-
         @skate_ostalos = @user.skate_ostalos
   end
 
@@ -52,7 +45,15 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-
+  
+  def identifier_exists
+  	@user = if params[:name]
+			User.find_by_name(params[:name])
+		elsif params[:email]
+			User.find_by_email(params[:email])
+		end
+ 	render :json => @user
+  end
 
   private
 

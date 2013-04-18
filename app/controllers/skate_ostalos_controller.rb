@@ -7,10 +7,7 @@ class SkateOstalosController < ApplicationController
   end
 
   def index
-        @skate_ostalos = SkateOstalo.order(sort_column + " " + sort_direction)
-        @users = User.all
-	@skate_ostalos = @skate_ostalos.paginate(:page => params[:page], :per_page => 10)
-
+        @skate_ostalos = SkateOstalo.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -32,9 +29,6 @@ class SkateOstalosController < ApplicationController
 
   def create
         @skate_ostalo = current_user.skate_ostalos.build(params[:skate_ostalo])
-	@deck = current_user.decks.build(params[:deck])
-        @truck = current_user.trucks.build(params[:truck])
-
     if @skate_ostalo.save
       redirect_to skate_ostalos_path
     else

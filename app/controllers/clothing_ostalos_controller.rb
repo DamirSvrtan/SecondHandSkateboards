@@ -7,10 +7,7 @@ class ClothingOstalosController < ApplicationController
   end
 
   def index
-        @clothing_ostalos = ClothingOstalo.order(sort_column + " " + sort_direction)
-        @users = ClothingOstalo.all
-	@clothing_ostalos = @clothing_ostalos.paginate(:page => params[:page], :per_page => 10)
-
+        @clothing_ostalos = ClothingOstalo.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -33,9 +30,6 @@ class ClothingOstalosController < ApplicationController
 
   def create
         @clothing_ostalo = current_user.clothing_ostalos.build(params[:clothing_ostalo])
-	@deck = current_user.decks.build(params[:deck])
-        @truck = current_user.trucks.build(params[:truck])
-
     if @clothing_ostalo.save
       flash[:success] = "Napravljen oglas!"
       redirect_to clothing_ostalos_path

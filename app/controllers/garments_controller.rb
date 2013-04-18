@@ -7,10 +7,7 @@ class GarmentsController < ApplicationController
   end
 
   def index
-        @garments = Garment.order(sort_column + " " + sort_direction)
-        @users = User.all
-	@garments = @garments.paginate(:page => params[:page], :per_page => 10)
-
+        @garments = Garment.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -32,9 +29,6 @@ class GarmentsController < ApplicationController
 
   def create
         @garment = current_user.garments.build(params[:garment])
-	@deck = current_user.decks.build(params[:deck])
-        @truck = current_user.trucks.build(params[:truck])
-
     if @garment.save
       redirect_to garments_path
     else

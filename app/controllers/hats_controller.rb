@@ -7,10 +7,7 @@ class HatsController < ApplicationController
   end
 
   def index
-        @hats = Hat.order(sort_column + " " + sort_direction)
-        @users = User.all
-	@hats = @hats.paginate(:page => params[:page], :per_page => 10)
-
+        @hats = Hat.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -32,9 +29,6 @@ class HatsController < ApplicationController
 
   def create
         @hat = current_user.hats.build(params[:hat])
-	@deck = current_user.decks.build(params[:deck])
-        @truck = current_user.trucks.build(params[:truck])
-
     if @hat.save
       redirect_to hats_path
     else

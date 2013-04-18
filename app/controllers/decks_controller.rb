@@ -4,14 +4,11 @@ class DecksController < ApplicationController
 
 
   def new
-         @deck = current_user.decks.build if signed_in?
+        @deck = current_user.decks.build if signed_in?
   end
 
   def index
-	@decks = Deck.order(sort_column + " " + sort_direction)
-	@users = User.all
-	@decks = @decks.paginate(:page => params[:page], :per_page => 6)
-
+	@decks = Deck.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 3)
   end
 
   def show
@@ -34,11 +31,6 @@ class DecksController < ApplicationController
 
   def create
 	@deck = current_user.decks.build(params[:deck])
-	@wheel = current_user.wheels.build(params[:wheel])
-	@truck = current_user.trucks.build(params[:truck])
-	@skate = current_user.skates.build(params[:skate])
-	@skate_ostalo = current_user.skate_ostalos.build(params[:skate_ostalo])
-
     if @deck.save
       redirect_to decks_path
     else

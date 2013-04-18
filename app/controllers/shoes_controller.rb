@@ -7,9 +7,7 @@ class ShoesController < ApplicationController
   end
 
   def index
-        @shoes = Shoe.order(sort_column + " " + sort_direction)
-        @users = User.all
-	@shoes = @shoes.paginate(:page => params[:page], :per_page => 10)
+        @shoes = Shoe.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -31,9 +29,6 @@ class ShoesController < ApplicationController
 
   def create
         @shoe = current_user.shoes.build(params[:shoe])
-	@deck = current_user.decks.build(params[:deck])
-        @truck = current_user.trucks.build(params[:truck])
-
     if @shoe.save
       redirect_to shoes_path
     else

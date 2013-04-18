@@ -7,9 +7,7 @@ class TrucksController < ApplicationController
   end
 
   def index
-        @trucks = Truck.order(sort_column + " " + sort_direction)
-        @users = User.all
-	@trucks = @trucks.paginate(:page => params[:page], :per_page => 10)
+        @trucks = Truck.order(sort_column + " " + sort_direction).paginate(:page => params[:page], :per_page => 10)
 
   end
 
@@ -32,8 +30,6 @@ class TrucksController < ApplicationController
 
   def create
         @truck = current_user.trucks.build(params[:truck])
-	@deck = current_user.decks.build(params[:deck])
-	@wheel = current_user.wheels.build(params[:wheel])
     if @truck.save
       redirect_to trucks_path
     else

@@ -43,23 +43,37 @@ $('.alert').hide();
 
 
 $('input[name="user[name]"]').bind('input', function() {
-var polje_imena = <%= raw @imena.to_json %>;
-    if(($.inArray($(this).val(), polje_imena))!=-1){
-                $(this).css({'background-color' : '#771B0C'});
-        }
-    else{
-       $(this).css({'background-color' : 'white'});
-        }
+	var name = $(this).val();
+		$.ajax('/users/identifier_exists', {
+			data: { name: name },
+			cache: false,
+			dataType: 'json',
+			success: function(result) {
+				if(result != null){
+					$('input[name="user[name]"]').css({'background-color' : '#771B0C'});
+					}
+				else{
+					$('input[name="user[name]"]').css({'background-color' : 'white'});
+					}
+				}
+		});
 });
 
 $('input[name="user[email]"]').bind('input', function() {
-var polje_mailova = <%= raw @mailovi.to_json %>;
-    if(($.inArray($(this).val(), polje_mailova))!=-1){
-                $(this).css({'background-color' : '#771B0C'});
-        }
-    else{
-       $(this).css({'background-color' : 'white'});
-        }
+	var email = $(this).val();
+		$.ajax('/users/identifier_exists', {
+			data: { email: email },
+			cache: false,
+			dataType: 'json',
+			success: function(result) {
+				if(result != null){
+					$('input[name="user[email]"]').css({'background-color' : '#771B0C'});
+					}
+				else{
+					$('input[name="user[email]"]').css({'background-color' : 'white'});
+					}
+				}
+		});
 });
 </script>
 
