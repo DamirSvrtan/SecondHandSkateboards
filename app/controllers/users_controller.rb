@@ -1,13 +1,30 @@
 class UsersController < ApplicationController
 	before_filter :signed_in_user, only: [:edit, :update]
-	before_filter :correct_user, only: [:edit, :update]
+	before_filter :correct_user, only: [:edit, :delete, :update]
   def show
+
 	@user=User.find(params[:id])
-	@decks = @user.decks.paginate(page: params[:page])
+
+	@decks = @user.decks
+	@wheels = @user.wheels
+
+
+        @skates = @user.skates
+        @trucks = @user.trucks
+
+        @garments = @user.garments
+        @shoes = @user.shoes
+
+        @hats = @user.hats
+        @clothing_ostalos = @user.clothing_ostalos
+
+        @skate_ostalos = @user.skate_ostalos
   end
 
   def new
 	@user=User.new
+	@imena=User.pluck(:name)
+	@mailovi=User.pluck(:email)
   end
 
   def create

@@ -1,10 +1,11 @@
 module DecksHelper
 def bool_na_hr(value)
 	if value==true
-	"Da"
+	bool_izvor="/images/true.png"
 	else
-	"Ne"
+	bool_izvor="/images/false.png"
 	end
 end
+
 end
 

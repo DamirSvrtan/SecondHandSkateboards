@@ -1,5 +1,1150 @@
 @import "bootstrap";
 
+
+.korisnikovi_oglasi{
+list-style-type:none;
+margin-left:-4px;
+position:relative;
+		 tr{
+			width:500px;
+			
+			}
+		.korisnik_oglas_slika{
+			
+
+			width:100px;
+
+		}
+		.korisnik_oglas_info{
+
+			width:300px;
+
+
+		}
+		.korisnik_oglas_linkovi{
+
+
+			width:100px;
+
+		}
+		#slikica_na_profilu{
+			border:2px solid black;
+
+		}
+}
+#container2_header{
+width:500px;
+height:25px;
+background-color:#ECC5A8;
+	h4{	position:absolute;
+		left:50%;
+		top:3px;
+		margin-left:-93px;
+		text-align:center;
+		}
+-webkit-border-top-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topleft: 15px;
+-moz-border-radius-topright: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+}
+#male_ikone_skate{
+position:relative;
+width:410px;
+height:50px;
+top:175px;
+}
+#male_ikone_clothing{
+position:relative;
+width:410px;
+height:50px;
+top:175px;
+}
+
+#gumb_div{
+position:absolute;
+width:500px;
+top:250px;
+height:50px;
+background-color:#ECC5A8;
+}
+
+.okviri{
+position:relative;
+float:left;
+width:80px;
+height:50px;
+
+
+-webkit-border-top-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topleft: 15px;
+-moz-border-radius-topright: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+}
+
+#container2{
+	position:relative;
+	height:300px;
+	width:500px;
+	top:0px;
+	left:50%;
+	margin-left:-250px;
+	background-color:#372F18;
+-webkit-border-top-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topleft: 15px;
+-moz-border-radius-topright: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border:1px solid #372F18;
+}
+
+#obrazac5{
+position:relative;
+
+width:500px;
+left:50%;
+margin-left:-250px;
+}
+.obrasci{
+position:relative;
+
+width:500px;
+left:50%;
+margin-left:-250px;
+}
+#obrazac5_greske{
+position:relative;
+border:1px solid #771B0C;
+background-color:#C9341C;
+color:white;
+}
+#obrazac5_naslov{
+background-color:#771B0C;
+height:25px;
+position:relative;
+border:2px solid #771B0C;
+}
+.obrasci_naslov{
+background-color:#771B0C;
+height:25px;
+position:relative;
+border:2px solid #771B0C;
+}
+#obrazac5_inputi{
+	position:relative;
+	border:1px solid #771B0C;
+		height:350px;
+		-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+		background-color:#372F18;
+		input{
+			width:190px;
+			position:absolute;
+			height:30px;
+		}
+		textarea{
+			width:400px;
+			position:absolute;
+			top:195px;
+			left:50px;
+			height:80px;
+			resize:none;
+		}
+		select{
+			width:120px;
+			position:absolute;
+			font-size:12px;
+			height:30px;
+			padding:none;
+
+		}
+		label{
+			position:absolute;
+			font-weight:bold;
+			color:white;
+		}
+		input#wheel_naslov{
+			width:250px;
+			top:30px;
+			left:50px;
+		}
+		input#wheel_marka{
+			top:30px;
+			left:320px;
+			width:130px;
+		}
+		select#wheel_starost{
+			top:90px;
+			left:150px;
+			width:90px;
+		}
+		select#wheel_koristenost{
+			top:90px;
+			left:260px;
+			width:90px;
+		}
+
+		select#wheel_radijus{
+			top:90px;
+			left:50px;
+			width:80px;			
+		}
+
+		input#wheel_cijena{
+			top:90px;
+			left:370px;
+			width:80px;
+		}
+
+		input#wheel_gumb{
+			top:288px;
+			width:400px;
+			height:auto;
+			left:50px;
+		}
+		#wheel_slika{
+			position:absolute;
+			top:140px;
+			left:266px;
+		}
+		#marka_label{
+			top:10px;
+			left:325px;
+		}
+		#naslov_label{
+			top:10px;
+			left:55px;
+		}
+		#radijus_label{
+			top:70px;
+			left:55px;
+		}
+		#starost_label{
+			top:70px;
+			left:155px;
+		}
+		#stanje_label{
+			top:70px;
+			left:265px;
+		}
+		#cijena_label{
+			top:70px;
+			left:375px;
+		}
+		#opis_label{
+			top:175px;
+			left:55px;
+		}
+		#opis1_label{
+			top:190px;
+			left:55px;
+		}
+		#opis2_label{
+			top:130px;
+			left:55px;
+		}
+		#wheel_zamjena{
+			top:135px;
+			left:50px;
+			width:50px;
+		}
+		#zamjena_label{
+			top:144px;
+			left:90px;
+			font-weight:normal;
+		}
+		input#hat_naslov{
+			width:250px;
+			top:30px;
+			left:50px;
+		}
+		input#hat_marka{
+			top:30px;
+			left:320px;
+			width:130px;
+		}
+		select#hat_starost{
+			top:90px;
+			left:150px;
+			width:90px;
+		}
+		select#hat_koristenost{
+			top:90px;
+			left:260px;
+			width:90px;
+		}
+
+		select#hat_velicina{
+			top:90px;
+			left:50px;
+			width:80px;			
+		}
+
+		input#hat_cijena{
+			top:90px;
+			left:370px;
+			width:80px;
+		}
+		#hat_slika{
+			position:absolute;
+			top:140px;
+			left:266px;
+		}
+		#hat_zamjena{
+			top:135px;
+			left:50px;
+			width:50px;
+		}
+		input#shoe_naslov{
+			width:250px;
+			top:30px;
+			left:50px;
+		}
+		input#shoe_marka{
+			top:30px;
+			left:320px;
+			width:130px;
+		}
+		select#shoe_starost{
+			top:90px;
+			left:150px;
+			width:90px;
+		}
+		select#shoe_koristenost{
+			top:90px;
+			left:260px;
+			width:90px;
+		}
+
+		select#shoe_velicina{
+			top:90px;
+			left:50px;
+			width:80px;			
+		}
+
+		input#shoe_cijena{
+			top:90px;
+			left:370px;
+			width:80px;
+		}
+		#shoe_slika{
+			position:absolute;
+			top:140px;
+			left:266px;
+		}
+		#shoe_zamjena{
+			top:135px;
+			left:50px;
+			width:50px;
+		}
+
+
+
+		input#deck_naslov{
+			width:250px;
+			top:30px;
+			left:50px;
+		}
+		input#deck_marka{
+			top:30px;
+			left:320px;
+			width:130px;
+		}
+		select#deck_starost{
+			top:90px;
+			left:150px;
+			width:90px;
+		}
+		select#deck_koristenost{
+			top:90px;
+			left:260px;
+			width:90px;
+		}
+
+		select#deck_sirina_daske{
+			top:90px;
+			left:50px;
+			width:80px;			
+		}
+
+		input#deck_cijena{
+			top:90px;
+			left:370px;
+			width:80px;
+		}
+		#deck_slika{
+			position:absolute;
+			top:140px;
+			left:266px;
+		}
+		#deck_zamjena{
+			top:135px;
+			left:140px;
+			width:50px;
+		}
+		#zamjena2_label{
+			top:144px;
+			left:180px;
+			font-weight:normal;
+		}
+		#deck_sa_gripom{
+			top:135px;
+			left:40px;
+			width:50px;
+		}
+		#grip_label{
+			top:144px;
+			left:80px;
+			font-weight:normal;
+		}
+
+
+
+		input#truck_naslov{
+			width:250px;
+			top:30px;
+			left:50px;
+		}
+		input#truck_marka{
+			top:30px;
+			left:320px;
+			width:130px;
+		}
+		select#truck_starost{
+			top:90px;
+			left:250px;
+			width:90px;
+		}
+		select#truck_koristenost{
+			top:90px;
+			left:360px;
+			width:90px;
+		}
+
+		select#truck_sirina1{
+			top:90px;
+			left:50px;
+			width:80px;			
+		}
+		select#truck_visina{
+			top:90px;
+			left:150px;
+			width:80px;			
+		}
+
+		input#truck_cijena{
+			top:150px;
+			left:50px;
+			width:80px;
+		}
+		#truck_slika{
+			position:absolute;
+			top:150px;
+			left:266px;
+		}
+		#truck_zamjena{
+			top:145px;
+			left:140px;
+			width:50px;
+		}
+		#zamjena2_label{
+			top:144px;
+			left:180px;
+			font-weight:normal;
+		}
+		#zamjena3_label{
+			top:154px;
+			left:180px;
+			font-weight:normal;
+		}
+		#starost1_label{
+			top:70px;
+			left:255px;
+		}
+		#stanje1_label{
+			top:70px;
+			left:375px;
+		}
+		#cijena1_label{
+			top:130px;
+			left:55px;
+		}
+		#visina_label{
+			top:70px;
+			left:155px;
+		}
+		#truck_dodatan_opis{
+			width:400px;
+			position:absolute;
+			top:210px;
+			left:50px;
+			height:65px;
+			resize:none;
+		}
+
+
+
+
+
+
+
+		input#garment_naslov{
+			width:250px;
+			top:30px;
+			left:50px;
+		}
+		input#garment_marka{
+			top:30px;
+			left:320px;
+			width:130px;
+		}
+		select#garment_starost{
+			top:90px;
+			left:250px;
+			width:90px;
+		}
+		select#garment_koristenost{
+			top:90px;
+			left:360px;
+			width:90px;
+		}
+
+		select#garment_vrsta{
+			top:90px;
+			left:50px;
+			width:80px;			
+		}
+		select#garment_velicina{
+			top:90px;
+			left:150px;
+			width:80px;			
+		}
+
+		input#garment_cijena{
+			top:150px;
+			left:50px;
+			width:80px;
+		}
+		#garment_slika{
+			position:absolute;
+			top:150px;
+			left:266px;
+		}
+		#garment_zamjena{
+			top:145px;
+			left:140px;
+			width:50px;
+		}
+		#garment_dodatan_opis{
+			width:400px;
+			position:absolute;
+			top:210px;
+			left:50px;
+			height:65px;
+			resize:none;
+		}
+
+
+
+		input#skate_ostalo_naslov{
+			width:400px;
+			top:30px;
+			left:50px;
+		}
+		input#skate_ostalo_cijena{
+			top:90px;
+			left:50px;
+			width:100px;			
+		}
+		#skate_ostalo_zamjena{
+			top:87px;
+			left:155px;
+			width:50px;
+		}
+		#zamjena4_label{
+			top:96px;
+			left:195px;
+			font-weight:normal;
+		}
+		#skate_ostalo_slika{
+			position:absolute;
+			top:91px;
+			left:274px;
+		}
+		#skate_ostalo_opis{
+			width:400px;
+			position:absolute;
+			top:152px;
+			left:50px;
+			height:125px;
+			resize:none;
+		}
+
+
+		input#clothing_ostalo_naslov{
+			width:400px;
+			top:30px;
+			left:50px;
+		}
+		input#clothing_ostalo_cijena{
+			top:90px;
+			left:50px;
+			width:100px;			
+		}
+		#clothing_ostalo_zamjena{
+			top:87px;
+			left:155px;
+			width:50px;
+		}
+		#clothing_ostalo_slika{
+			position:absolute;
+			top:91px;
+			left:274px;
+		}
+		#clothing_ostalo_opis{
+			width:400px;
+			position:absolute;
+			top:152px;
+			left:50px;
+			height:125px;
+			resize:none;
+		}
+
+}
+
+
+#obrazac6_inputi{
+	position:relative;
+	border:1px solid #771B0C;
+		height:400px;
+		-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+		background-color:#372F18;
+		input{
+			width:190px;
+			position:absolute;
+			height:30px;
+		}
+		textarea{
+			width:400px;
+			position:absolute;
+			top:195px;
+			left:50px;
+			height:80px;
+			resize:none;
+		}
+		select{
+			width:120px;
+			position:absolute;
+			font-size:12px;
+			height:30px;
+			padding:none;
+
+		}
+		label{
+			position:absolute;
+			font-weight:bold;
+			color:white;
+		}
+
+		input#wheel3_gumb{
+			top:350px;
+			width:400px;
+			height:auto;
+			left:50px;
+		}
+
+		#skate_dodatan_opis{
+			width:400px;
+			position:absolute;
+			top:270px;
+			left:50px;
+			height:70px;
+			resize:none;
+		}
+		input#skate_naslov{
+			width:250px;
+			top:30px;
+			left:50px;
+		}
+		input#skate_daska_marka{
+			top:90px;
+			left:50px;
+			width:100px;
+		}
+		#skate_daska_sirina{
+			top:90px;
+			left:170px;
+			width:80px;
+		}
+		input#skate_osovine_marka{
+			top:150px;	
+			left:50px;
+			width:100px;
+		}
+		#skate_osovine_sirina{
+			top:150px;
+			left:170px;	
+			width:80px;
+		}
+		input#skate_kotaci_marka{
+			top:210px;
+			left:50px;
+			width:100px;
+		}
+		#skate_kotaci_radijus{
+			top:210px;
+			left:170px;
+			width:80px;
+		}
+		#dmarka_label{
+			top:70px;
+			left:50px;
+		}
+		#dsirina_label{
+			top:70px;
+			left:170px;
+		}
+		#omarka_label{
+			top:130px;
+			left:50px;
+		}
+		#osirina_label{
+			top:130px;
+			left:164px;
+		}
+
+		#kmarka_label{
+			top:190px;
+			left:50px;
+		}
+
+		#kradijus_label{
+			top:190px;
+			left:164px;
+		}
+		#skate_cijena{
+			top:30px;
+			left:320px;
+			width:130px;
+			}
+		#skate_starost{
+			top:90px;
+			left:265px;
+			width:90px;
+		}
+		#skate_koristenost{
+			top:90px;
+			left:370px;
+			width:80px;
+		}
+		#starost_label{
+			top:70px;
+			left:270px;
+		}
+		#stanje_label{
+			top:70px;
+			left:375px;
+		}
+		#opis3_label{
+			top:250px;
+			left:50px;
+		}
+		#skate_slika{
+			top:211px;
+			left:270px;
+		}
+		#skate_zamjena{
+			top:148px;
+			left:250px;
+			width:50px;
+		}
+		#skate_sa_gripom{
+			top:148px;
+			left:350px;
+			width:50px;
+		}
+		#zamjena_label{
+			top:157px;
+			left:290px;		
+	
+		}
+		#grip_label{
+			top:157px;
+			left:390px;
+		}
+		#naslov_label{
+			top:10px;
+			left:50px;		
+		}
+		#cijena_label{
+			top:10px;
+			left:320px;
+		}
+}
+
+#regani_korisnik{
+position:relative;
+
+
+}
+#zab_lozinka{
+position:absolute;
+top:180px;
+left:35px;
+}
+#novi_korisnik{
+position:absolute;
+top:180px;
+right:15px;
+}
+#registracijske_greske{
+position:relative;
+background-color:#C9341C;
+}
+#registracijski_inputi{
+position:relative;
+
+height:250px;
+}
+#registracijski_naslov{
+
+position:relative;
+}
+#crta_za_jednakost{
+width:100%;
+position:relative;
+top:300px;
+}
+#kontenjer2 input#session_email{
+top:80px;
+}
+#kontenjer2 input#session_password{
+right:0px;
+top:80px;
+}
+#kontenjer2 #session_email_label{
+left:77px;
+font-weight:bold;
+
+}
+#kontenjer2 #session_password_label{
+left:305px;
+font-weight:bold;
+
+}
+#kontenjer2 input{
+width:200px;
+position:absolute;
+}
+#kontenjer2 select{
+width:200px;
+position:absolute;
+}
+#kontenjer2 label{
+position:absolute;
+font-weight:bold;
+}
+#kontenjer2 input#user_email{
+right:0px;
+top:30px;
+}
+#kontenjer2 input#user_password_confirmation{
+right:0px;
+top:95px;
+}
+#kontenjer2 select#user_county{
+right:0px;
+top:160px;
+}
+#kontenjer2 input#user_name{
+top:30px;
+}
+#kontenjer2 input#user_password{
+top:95px;
+}
+#kontenjer2 input#user_phone_number{
+top:160px;
+}
+#kontenjer2 #email_label{
+top:10px;
+left:315px;
+}
+#kontenjer2 #nadimak_label{
+top:10px;
+left:71px;
+}
+#kontenjer2 #lozinka_label{
+top:75px;
+left:73px;
+}
+#kontenjer2 #lozinka_label_confirm{
+left:270px;
+top:75px;
+}
+#kontenjer2 #phone_label{
+top:140px;
+left:52px;
+}
+#kontenjer2 #county_label{
+left:310px;
+top:140px;	
+}
+input#registracijski_gumb{
+position:absolute;
+top:213px;
+width:440px;
+}
+input#prijavni_gumb{
+position:absolute;
+top:130px;
+width:440px;
+}
+.keys{
+background-color:#E6E6E6;
+color:black;
+}
+.values{
+background-color:#E6E6E6;
+color:black;
+width:98px;
+
+}
+.keys_ostalo{
+background-color:#E6E6E6;
+color:black;
+width:56px;
+}
+.values_ostalo{
+background-color:#E6E6E6;
+color:black;
+width:98px;
+}
+#key_opis{
+background-color:#E6E6E6;
+color:black;
+width:170px;
+}
+#value_opis{
+background-color:#E6E6E6;
+color:black;
+width:98px;
+max-width:98px;
+}
+#key_opis1{
+background-color:#E6E6E6;
+color:black;
+width:300px;
+}
+#value_opis1{
+background-color:#E6E6E6;
+color:black;
+width:98px;
+max-width:300px;
+}
+.keis{
+background-color:#E6E6E6;
+color:black;
+width:166px;
+}
+.valus{
+background-color:#E6E6E6;
+color:black;
+width:166px;
+}
+#tablica_atributa{
+border-spacing:2px;
+}
+#tablica_atributa td{
+padding:6px;
+border:3px solid #ECC5A8;
+}
+#tablica_opis{
+border-spacing:2px;
+}
+#tablica_opis td{
+padding:6px;
+border:3px solid #ECC5A8;
+}
+#tablica_opis1{
+border-spacing:2px;
+}
+#tablica_opis1 td{
+padding:6px;
+border:3px solid #ECC5A8;
+}
+#pojedinacni_oglas{
+position:relative;
+border:1px solid black;
+top:0px;
+min-width:400px;
+max-width:500px;
+
+left:50%;
+margin-left:-250px;
+background-color:#ECC5A8;
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+min-height:450px;
+}
+#pojedinacni_oglas_skate{
+position:relative;
+border:1px solid black;
+top:0px;
+min-width:400px;
+max-width:550px;
+
+left:50%;
+margin-left:-250px;
+background-color:#ECC5A8;
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+min-height:450px;
+}
+#pojedinacni_profil{
+position:relative;
+border:1px solid black;
+top:0px;
+min-width:400px;
+max-width:500px;
+
+left:50%;
+margin-left:-250px;
+background-color:#ECC5A8;
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+#info_o_korisniku{
+
+positon:relative;
+margin-top:30px;
+
+
+}
+#korisnikovi_oglasi{
+
+position:relative;
+margin-top:40px;
+margin-left:5px;
+}
+#trakica{
+position:absolute;
+width:500px;
+height:30px;
+background-color:#372F18;
+margin-top:2px;
+color:white;
+text-align:center;
+vertical-align:middle;
+}
+#trakica_skate{
+position:absolute;
+width:550px;
+height:30px;
+background-color:#372F18;
+margin-top:2px;
+color:white;
+text-align:center;
+vertical-align:middle;
+}
+#trakica_skate p{
+margin-top:6px;
+}
+#trakica2{
+position:absolute;
+width:500px;
+height:30px;
+background-color:#372F18;
+margin-top:0px;
+color:white;
+text-align:center;
+vertical-align:middle;
+}
+#trakica2 p{
+margin-top:6px;
+}
+#trakica p{
+margin-top:6px;
+}
+#zz{
+width:300px;
+border:1px solid black;
+height:30px;
+background-color:black;
+}
+#pojedinacni_oglas_info{
+position:absolute;
+margin-top:18px;
+margin-left:0px;
+
+}
+
+
+#pojedinacni_oglas_opis{
+position:absolute;
+margin-top:250px;
+margin-left:0px;
+
+}
+#pojedinacni_oglas_opis_kotac{
+position:absolute;
+margin-top:220px;
+margin-left:0px;
+
+}
+#pojedinacni_oglas_slika_i_korisnik{
+position:relative;
+width:300px;
+margin-top:20px;
+left:190px;
+}
+#pojedinacni_oglas_slika_i_korisnik_skate{
+position:relative;
+width:300px;
+margin-top:20px;
+left:235px;
+}
+#pojedinacni_oglas_slika{
+position:relative;
+width:300px;
+border:3px solid black;
+background-color:#E6E6E6;
+text-align:center;
+vertical-align:middle;
+}
+#slikica{
+margin-top:5px;
+}
+#pojedinacni_oglas_korisnik{
+text-align:center;
+background-color:#E6E6E6;
+}
+
 .fixed_table { table-layout:fixed; }
 .fixed_table th { 
 overflow: hidden;
@@ -12,18 +1157,18 @@ font-size:14px;
 }
 #traka_gore{
 	width:101%;
-background-image: linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
-background-image: -o-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
-background-image: -moz-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
-background-image: -webkit-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
-background-image: -ms-linear-gradient(bottom, rgb(110,110,110) 49%, rgb(47,47,47) 50%);
+background-image: linear-gradient(bottom, #372F18 51%, #771A0C 52%);
+background-image: -o-linear-gradient(bottom, #372F18 51%, #771A0C 52%);
+background-image: -moz-linear-gradient(bottom, #372F18 51%, #771A0C 52%);
+background-image: -webkit-linear-gradient(bottom, #372F18 51%, #771A0C 52%);
+background-image: -ms-linear-gradient(bottom, #372F18 51%, #771A0C 52%);
 
 background-image: -webkit-gradient(
 	linear,
 	left bottom,
 	left top,
-	color-stop(0.49, rgb(110,110,110)),
-	color-stop(0.5, rgb(47,47,47))
+	color-stop(0.51, #372F18),
+	color-stop(0.52, #771A0C)
 );
 	height:40px;
 	margin-top:0px;
@@ -31,50 +1176,57 @@ background-image: -webkit-gradient(
 }
 #daske_lista{
 position:relative;
-border:1px solid black;
-top:100px;
+border:2px solid #ECC5A8;
+color:white;
 min-width:300px;
 max-width:500px;
 left:50%;
 margin-left:-250px;
-background-color:#D2CECE;
+background-color:#372f18;
 
--webkit-border-top-left-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
 -webkit-border-bottom-left-radius: 10px;
--moz-border-radius-topleft: 10px;
+-moz-border-radius-bottomright: 10px;
 -moz-border-radius-bottomleft: 10px;
-border-top-left-radius: 10px;
+border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 }
 #skate_kompleti_lista{
 position:relative;
 border:1px solid black;
-top:100px;
+top:0px;
 min-width:300px;
-max-width:800px;
+max-width:500px;
 left:50%;
 margin-left:-250px;
 background-color:#D2CECE;
--webkit-border-top-left-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
 -webkit-border-bottom-left-radius: 10px;
--moz-border-radius-topleft: 10px;
+-moz-border-radius-bottomright: 10px;
 -moz-border-radius-bottomleft: 10px;
-border-top-left-radius: 10px;
+border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 }
+
 #kontenjer{
 position:relative;
-border:1px solid black;
 width:1000px;
 left:50%;
 margin-left:-500px;
 margin-top:100px;
+
+min-height:450px;
 }
 #naslov{
 text-align:center;
 margin-top:5px;
+color:#372F18;
 }
-
+#naslov1{
+text-align:center;
+margin-top:5px;
+color:white;
+}
 div.pagination{
 text-align:center;
 }
@@ -82,53 +1234,48 @@ text-align:center;
 list-style-type:none;
 width:150px;
 position:absolute;
-top:130px;
+top:0px;
 left:50%;
 margin-left:-425px;
+margin-top:10px;
+background-color:#771B0C;
 }
 
 .sporedni_sastrane{
+margin-left:0px;
 height:22px;
 padding-top:3px;
 margin-top:10px;
-border:1px solid #ab2424;
 text-align:center;
 width:150px;
-color:white;
+color:black;
 font-weight:bold;
+background-color:#ECC5A8;
+}
 
-background-image: linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -o-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -moz-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -webkit-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -ms-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+.glavni_sastrane{
+padding-top:8px;
+margin-top:0px;
+border:1px solid 6e6e6e;
+text-align:center;
+margin-left:-5px;
+color:white;
+width:160px;
+font-weight:bold;
+height:25px;
+background-image: linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -o-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -moz-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -webkit-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -ms-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
 
 background-image: -webkit-gradient(
 	linear,
 	left bottom,
 	left top,
-	color-stop(0.32, #C62B35),
-	color-stop(0.61, #C20E1A)
+	color-stop(0.45, #870B13),
+	color-stop(0.73, #C20E1A)
 );
-
--webkit-border-bottom-right-radius: 10px;
--moz-border-radius-bottomright: 10px;
-border-bottom-right-radius: 10px;
-}
-
-.glavni_sastrane{
-padding-top:8px;
-margin-top:10px;
-border:1px solid 6e6e6e;
-text-align:center;
-color:white;
-width:150px;
-font-weight:bold;
-height:25px;
--webkit-border-top-right-radius: 10px;
--moz-border-radius-topright: 10px;
-border-top-right-radius: 10px;
-background-color:#6e6e6e;
 }
 
 td{
@@ -139,23 +1286,23 @@ border-color:#c20e1a;
 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(194, 14, 26, 0.6);
 }
 #prva_traka{
-	background-color:#2f2f2f;
-	color:white;
+	background-color:#ECC5A8;
+	color:#372F18;
 }
 #shs{
 	position:absolute;
-	margin-top:45px;
+	margin-top:22px;
 	left:50%;
-	margin-left:-440px;
+	margin-left:-430px;
 
 	font-family:Tahoma;
 	font-size:14px;
-	color:#979797;
+	color:white;
 }
 #predaj_oglas{
 	position:absolute;
 	left:50%;
-	margin-left:190px;
+	margin-left:-415px;
 	margin-top:50px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -166,18 +1313,18 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(194, 14, 26, 0.6)
 	text-align:center;
 	vertical-align:text-bottom;
 
-background-image: linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -o-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -moz-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -webkit-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
-background-image: -ms-linear-gradient(bottom, #C62B35 32%, #C20E1A 61%);
+background-image: linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -o-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -moz-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -webkit-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -ms-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
 
 background-image: -webkit-gradient(
 	linear,
 	left bottom,
 	left top,
-	color-stop(0.32, #C62B35),
-	color-stop(0.61, #C20E1A)
+	color-stop(0.45, #870B13),
+	color-stop(0.73, #C20E1A)
 );
 }
 
@@ -187,30 +1334,64 @@ margin-top:10px;
 font-family:Tahoma;
 font-weight:bold;
 }
+
+
+#predaj_oglas_{
+	position:absolute;
+	margin-left:360px;
+	margin-top:10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	width:130px;
+	height:30px;
+	
+
+
+background-image: linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -o-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -moz-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -webkit-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+background-image: -ms-linear-gradient(bottom, #870B13 45%, #C20E1A 73%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.45, #870B13),
+	color-stop(0.73, #C20E1A)
+);
+}
+
+#predaj_oglas_ h4{
+color:white;
+margin-top:7px;
+font-family:Tahoma;
+font-weight:bold;
+}
 #logo_puknuti{
 	position:absolute;
 	left:50%;
-	margin-left:-150px;
-	margin-top:20px;
+	margin-left:-140px;
+	margin-top:12px;
 }
 #container{
 	position:relative;
-
-	height:480px;
+	height:380px;
 	width:900px;
-	top:100px;
+	top:0px;
 	left:50%;
 	margin-left:-450px;
+
 }
 
 #reklame{
 	position:relative;
-
 	width:380px;
 	height:95px;
 	left:50%;
 	margin-left:-190px;
-	top:50px;
+	top:30px;
 
 }
 
@@ -247,7 +1428,7 @@ color:white;
 	top:20px;
 	right:10px;
 	left:50%;
-	margin-left:155px;
+	margin-left:165px;
 }
 #navlist a:link {color:#FFFFFF;} /* unvisited link */
 #navlist a:visited {color:#FFFFFF;}  /* visited link */
@@ -270,6 +1451,14 @@ a:active {color:#c20e1a;}
 
 
 a { text-decoration:none; }
+	#kontenjer2{
+		position:relative;
+		left:50%;
+		width:440px;
+		min-height:350px;
+		margin-left:-220px;
+
+}
 	#gore
         {
                 position:absolute;
@@ -280,6 +1469,7 @@ a { text-decoration:none; }
         body
         {
                 background-color:white ;
+		color:#372F18;
         }
 
         #header
@@ -336,27 +1526,22 @@ a { text-decoration:none; }
 	margin-left: 255px;
 	}
 	
-	.row
-	{
-	position:absolute;
-	margin-top: 120px;
-	margin-left: -10px;
-	}
+
 
 	input, textarea, select, .uneditable-input {
  	 border: 1px solid #bbb;
  	 width: 350px;
-	 padding: 10px;
+	 padding-left: 10px;
  	 height: 35px;
  	 margin-bottom: 15px;
  	 @include box_sizing;
 	}
 
 	#error_explanation {
-  		color: #f00;
+  		color: white;
   		ul {
-  		  list-style: none;
-  		  margin: 0 0 18px 0;
+  		  
+  		  margin: 10px 0 15px 30px;
   		}
 	}
 
@@ -368,8 +1553,9 @@ a { text-decoration:none; }
 	.alert
 	{
 	position:absolute;
-	margin-top:10px;
-	margin-left:250px;
+	margin-top:320px;
+	left:50%;
+	margin-left:-145px;
 	}
 	.alert-success
 	{
@@ -390,11 +1576,6 @@ a { text-decoration:none; }
 	border-top-right-radius: 10px;
 	}
 	
-	#pojedinacna_daska{
-	position: absolute;
-	margin-top:80px;
-	margin-left:250px;
-	}
 	
 	#deck_dodatan_opis{
 	height:103px;
@@ -407,3 +1588,7 @@ a { text-decoration:none; }
 	margin-left:400px;
 	margin-top:-710px;
 	}
+
+.control-group.error > label, .field_with_errors > label, .control-group.error .help-block, .field_with_errors .help-block, .control-group.error .help-inline, .field_with_errors .help-inline {
+color:white;
+}

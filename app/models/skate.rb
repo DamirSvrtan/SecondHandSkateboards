@@ -1,10 +1,11 @@
 class Skate < ActiveRecord::Base
-attr_accessible :koristenost, :daska_marka, :daska_sirina, :osovine_marka, :osovine_sirina, :kotaci_marka, :kotaci_radijus, :sa_gripom, :cijena, :dodatan_opis, :slika
+attr_accessible :koristenost, :daska_marka, :daska_sirina, :osovine_marka, :osovine_sirina, :kotaci_marka, :kotaci_radijus, :sa_gripom, :cijena, :dodatan_opis, :slika, :naslov, :starost, :zamjena
 
 has_attached_file :slika, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 belongs_to :user
 
+validates :naslov, presence: true
 validates :koristenost, presence: true
 validates :daska_marka, presence: true
 validates :daska_sirina, presence: true

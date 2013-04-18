@@ -1,18 +1,25 @@
 <%= form_for @clothing_ostalo,:url => clothing_ostalos_path, :html => { :multipart => true } do |d| %>
+  <div id="obrazac5_greske">
   <%= render 'shared/error_messages', object: d.object %>
+  </div>
+  <div id="obrazac5_inputi">
   <div class="field" >
-        <%= d.label :naslov %>
+        <%= d.label :naslov, id:"naslov_label" %>
         <%= d.text_field :naslov %>
 
-        <%= d.label :opis, "Opis:" %>
+        <%= d.label :cijena, id:"radijus_label"%>
+        <%= d.text_field :cijena %>
+	
+	<%= d.label :zamjena, "Zamjena?", id:"zamjena4_label" %>
+        <%= d.check_box :zamjena %>
+        
+	<%= d.label :opis, "Opis:", id:"opis2_label" %>
         <%= d.text_area :opis %>
 
-        <%= d.label :cijena %>
-        <%= d.text_field :cijena %>
-
-        <br/>
+	<br/>
         <%= d.file_field :slika %>
   </div>
-  <%= d.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= d.submit "Post", class: "btn btn-large btn-danger", id:"wheel_gumb"%>
+</div>
 <% end %>
 

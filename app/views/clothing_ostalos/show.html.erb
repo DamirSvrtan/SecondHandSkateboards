@@ -1,18 +1,51 @@
-<div id="pojedinacna_daska">
-<h3>Ostala skate oprema <%= @skate_ostalo.naslov %></h3>
+<% @user=User.find(@clothing_ostalo.user_id) %>
+
+<div id="pojedinacni_oglas">
+
+<h3 id="naslov"><%= @clothing_ostalo.naslov%></h3>
+
+<div id="trakica"><p><b>Datum postavljanja oglasa:</b> <%= @clothing_ostalo.created_at.strftime("%d-%m-%Y") %></p></div>
 <br/>
-<p><b>Marka daske:</b> <%= @skate_ostalo.naslov%><br/>
-<b>Sirina daske:</b> <%= @skate_ostalo.opis %><br/>
-<b>Cijena </b><%= @skate_ostalo.cijena %><br/>
-<b>Slika:</b><br/>
-<% izvor="/system/skate_ostalos/slikas/000/000/00"+@skate_ostalo.id.to_s+"/medium/"+@skate_ostalo.slika_file_name %>
-<% izvor2="/system/skate_ostalos/slikas/000/000/00"+@skate_ostalo.id.to_s+"/thumb/"+@skate_ostalo.slika_file_name %>
-<%= image_tag (izvor) %>
-<br/><br/>
-<% @user=User.find(@skate_ostalo.user_id) %>
-<h4>Podatci o korisniku</h4><br/>
-<%= link_to @user.name, @user %><br/>
-<%= @user.email %><br/>
-<%= @user.phone_number %>
-</p>
+
+<div id="pojedinacni_oglas_info" align="center">
+<table id="tablica_atributa">
+<tr>
+<td class="keys_ostalo"><b>Cijena:</b></td>
+<td class="values_ostalo"><%= @clothing_ostalo.cijena %> kn</td>
+</tr>
+</table>
+<table id="tablica_opis">
+<tr>
+<td id="key_opis"><b>Opis:</b></td>
+</tr>
+<td id="value_opis"><%= @clothing_ostalo.opis %></td>
+<tr>
+</table>
+</div>
+
+
+<div id="pojedinacni_oglas_slika_i_korisnik">
+
+<div id="pojedinacni_oglas_slika">
+
+<% if @clothing_ostalo.slika_file_name %>
+<% string_id = add_zeros(@clothing_ostalo.id) %>
+<% izvor2="/system/clothing_ostalos/slikas/000/000/"+string_id+"/medium/"+@clothing_ostalo.slika_file_name %>
+<% else %>
+<% izvor2="/images/no photo.png" %>
+<% end %>
+<%= image_tag (izvor2), :id=>"slikica" %>
+
+
+</div>
+<hr>
+<div id="pojedinacni_oglas_korisnik">
+
+<%= link_to @user.name, "/korisnik/#{@user.name}" %><br/>
+<b>E-mail: </b><%= @user.email %><br/>
+<b>Tel: </b><%= @user.phone_number %><br/>
+<b>Zupanija: </b><%= @user.county %>
+</div>
+<br>
+</div>
 </div>

@@ -2,6 +2,10 @@ class HatsController < ApplicationController
   before_filter :correct_user, only: [:destroy, :edit, :update]
   helper_method :sort_column, :sort_direction
 
+  def new
+         @hat = current_user.hats.build if signed_in?
+  end
+
   def index
         @hats = Hat.order(sort_column + " " + sort_direction)
         @users = User.all
@@ -20,7 +24,6 @@ class HatsController < ApplicationController
   def update
     @hat = Hat.find(params[:id])
     if @hat.update_attributes(params[:hat])
-      flash[:success] = "Oglas editiran!"
       redirect_to @hat
     else
       render 'edit'
@@ -33,10 +36,9 @@ class HatsController < ApplicationController
         @truck = current_user.trucks.build(params[:truck])
 
     if @hat.save
-      flash[:success] = "Napravljen oglas!"
       redirect_to hats_path
     else
-      render 'static_pages/objavi'
+      render 'hats/new'
     end
   end
 

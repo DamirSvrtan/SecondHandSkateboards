@@ -1,8 +1,6 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
-    <div class="alert alert-error">
-      Neispravno su uneseni podaci
-    </div>
+    <p style="margin-left:10px;margin-top:5px;font-weight:bold">Niste unjeli sve podatke ili ste pogrjesili pri unosu:</p>
     <ul>
     <% object.errors.full_messages.each do |msg| %>
       <li> <%= hrjezik(msg) %></li>

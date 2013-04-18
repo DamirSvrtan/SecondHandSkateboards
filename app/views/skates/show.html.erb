@@ -1,20 +1,80 @@
-<div id="pojedinacna_daska">
-<h3>Skate komplet <%= @skate.daska_marka %> <%= @skate.daska_sirina %>mm <%= @skate.osovine_sirina %></h3>
-<br/>
-<p><b>Marka daske:</b> <%= @skate.daska_marka %><br/>
-<b>Sirina daske:</b> <%= @skate.daska_sirina %><br/>
-<b>Marka osovina:</b> <%= @skate.osovine_marka %><br/>
-<b>Marka kotaca:</b> <%= @skate.kotaci_marka %><br/>
-<b>Cijena:</b> <%= @skate.cijena %><br/>
-<b>Slika:</b><br/>
-<% izvor="/system/skates/slikas/000/000/00"+@skate.id.to_s+"/medium/"+@skate.slika_file_name %>
-<% izvor2="/system/skates/slikas/000/000/00"+@skate.id.to_s+"/thumb/"+@skate.slika_file_name %>
-<%= image_tag (izvor) %>
-<br/><br/>
 <% @user=User.find(@skate.user_id) %>
-<h4>Podatci o korisniku</h4><br/>
-<%= link_to @user.name, @user %><br/>
-<%= @user.email %><br/>
-<%= @user.phone_number %>
-</p>
+
+<div id="pojedinacni_oglas_skate">
+
+<h3 id="naslov"><%= @skate.naslov%></h3>
+
+<div id="trakica_skate"><p><b>Datum postavljanja oglasa:</b> <%= @skate.created_at.strftime("%d-%m-%Y") %></p></div>
+<br/>
+
+<div id="pojedinacni_oglas_info" align="center">
+<table id="tablica_atributa">
+<tr>
+<td class="keys"><b>Marka daske:</b></td>
+<td class="values"><%= @skate.daska_marka %></td>
+</tr><tr>
+<td class="keys"><b>Sirina daske:</b></td>
+<td class="values"><%= @skate.daska_sirina %></td>
+</tr><tr>
+<td class="keys"><b>Marka osovina:</b></td>
+<td class="values"><%= @skate.osovine_marka %></td>
+</tr><tr>
+<td class="keys"><b>Sirina osovina:</b></td>
+<td class="values"><%= @skate.osovine_sirina %></td>
+</tr><tr>
+<td class="keys"><b>Marka kotaca:</b></td>
+<td class="values"><%= @skate.kotaci_marka %></td>
+</tr><tr>
+<td class="keys"><b>Radijus kotaca:</b></td>
+<td class="values"><%= @skate.kotaci_radijus %></td>
+</tr><tr>
+<td class="keys"><b>Stanje:</b></td>
+<td class="values"><%= @skate.koristenost %></td>
+</tr><tr>
+<td class="keys"><b>Starost:</b></td>
+<td class="values"><%= @skate.starost %></td>
+</tr><tr>
+<td class="keys"><b>Cijena:</b></td>
+<td class="values"><%= @skate.cijena %></td>
+</tr><tr>
+<td class="keys"><b>Grip:</b></td>
+<td class="values"><%= image_tag(bool_na_hr(@skate.sa_gripom), :size=>"10x10") %></td>
+</tr><tr>
+<td class="keys"><b>Zamjena:</b></td>
+<td class="values"><%= image_tag(bool_na_hr(@skate.zamjena), :size=>"10x10") %></td>
+</tr>
+</table>
+</div>
+
+<div id="pojedinacni_oglas_slika_i_korisnik_skate">
+
+<div id="pojedinacni_oglas_slika">
+
+<% if @skate.slika_file_name %>
+<% string_id = add_zeros(@skate.id) %>
+<% izvor2="/system/skates/slikas/000/000/"+string_id+"/medium/"+@skate.slika_file_name %>
+<% else %>
+<% izvor2="/images/no photo.png" %>
+<% end %>
+<%= image_tag (izvor2), :id=>"slikica" %>
+
+
+</div>
+<hr>
+<div id="pojedinacni_oglas_korisnik">
+
+<%= link_to @user.name, "/korisnik/#{@user.name}" %><br/>
+<b>E-mail: </b><%= @user.email %><br/>
+<b>Tel: </b><%= @user.phone_number %><br/>
+<b>Zupanija: </b><%= @user.county %>
+</div>
+<table id="tablica_opis1">
+<tr>
+<td id="key_opis1"><b>Dodatan opis:</b></td>
+</tr>
+<td id="value_opis1"><%= @skate.dodatan_opis %></td>
+<tr>
+</table>
+<br>
+</div>
 </div>

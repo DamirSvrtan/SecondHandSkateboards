@@ -1,39 +1,54 @@
 <%= form_for @skate,:url => skates_path, :html => { :multipart => true } do |d| %>
+  <div id="obrazac5_greske">
   <%= render 'shared/error_messages', object: d.object %>
+  </div>
+  <div id="obrazac6_inputi">
   <div class="field" >
-        <%= d.label :daska_marka %>
-        <%= d.text_field :daska_marka %>
+        <%= d.label :naslov, "Naslov:", id:"naslov_label" %>
+        <%= d.text_field :naslov %>
 
-        <%= d.label :daska_sirina %>
-        <%= d.text_field :daska_sirina %>
-
-        <%= d.label :osovine_marka %>
-        <%= d.text_field :osovine_marka %>
-
-        <%= d.label :osovine_sirina %>
-        <%= d.text_field :osovine_sirina %>
-
-        <%= d.label :kotaci_marka %>
-        <%= d.text_field :kotaci_marka %>
-
-        <%= d.label :kotaci_radijus %>
-        <%= d.text_field :kotaci_radijus %>
-
-        <%= d.label :koristenost, "Stanje" %>
-        <%= d.text_field :koristenost %>
-
-        <%= d.label :cijena %>
+        <%= d.label :cijena, "Cijena:", id:"cijena_label"%>
         <%= d.text_field :cijena %>
 
-        <%= d.label :dodatan_opis, "Dodatan opis:" %>
+
+        <%= d.label :daska_marka,"Marka daske:", id:"dmarka_label" %>
+        <%= d.text_field :daska_marka %>
+
+        <%= d.label :daska_sirina, "Sirina daske:", id:"dsirina_label" %>
+       <%= d.select :daska_sirina, [["51mm","51mm"],["52mm","52mm"],["53mm","53mm"],["54mm","54mm"],["55mm","55mm"],["56mm","56mm"]],:include_blank => true %>
+
+        <%= d.label :osovine_marka,"Marka osovine:", id:"omarka_label" %>
+        <%= d.text_field :osovine_marka %>
+
+        <%= d.label :osovine_sirina, "Sirina osovine:", id:"osirina_label" %>
+        <%= d.select :osovine_sirina, [["51mm","51mm"],["52mm","52mm"],["53mm","53mm"],["54mm","54mm"],["55mm","55mm"],["56mm","56mm"]],:include_blank => true %>
+
+        <%= d.label :kotaci_marka,"Marka kotaca:", id:"kmarka_label" %>
+        <%= d.text_field :kotaci_marka %>
+
+
+        <%= d.label :kotaci_radijus, "Radijus kotaca:", id:"kradijus_label" %>
+       <%= d.select :kotaci_radijus, [["51mm","51mm"],["52mm","52mm"],["53mm","53mm"],["54mm","54mm"],["55mm","55mm"],["56mm","56mm"]],:include_blank => true %>
+
+
+        <%= d.label :starost, "Starost:", id:"starost_label" %>
+        <%= d.select :starost, [["Novo","Novo"],["Rabljeno","Rabljeno"]], :include_blank => true %>
+
+        <%= d.label :koristenost, "Stanje:", id:"stanje_label" %>
+        <%= d.select :koristenost, [["Odlicno","Odlicno"],["Dobro","Dobro"],["Lose","Lose"]], :include_blank => true %>
+
+
+        <%= d.label :dodatan_opis, "Dodatan opis:", id:"opis3_label" %>
         <%= d.text_area :dodatan_opis %>
 
-        <p>Grip</p>
+	<%= d.label :sa_gripom, "Grip?", id:"grip_label" %>
         <%= d.check_box :sa_gripom %>
-        <br/>
+	
+	<%= d.label :zamjena, "Zamjena?", id:"zamjena_label" %>
+        <%= d.check_box :zamjena %>
+	<br/>
         <%= d.file_field :slika %>
   </div>
-  <%= d.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= d.submit "Post", class: "btn btn-large btn-danger", id:"wheel3_gumb"%>
+</div>
 <% end %>
-
-

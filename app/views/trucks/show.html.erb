@@ -1,21 +1,70 @@
-<div id="pojedinacna_daska">
-<h3>Kotaci <%= @truck.marka%> <%= @truck.sirina1 %>mm <%= @truck.visina %></h3>
-<br/>
-<p><b>Marka:</b> <%= @truck.marka %><br/>
-<b>Sirina:</b> <%= @truck.sirina1 %><br/>
-<b>Stanje:</b> <%= @truck.koristenost %><br/>
-<b>Starost:</b> <%= @truck.starost %><br/>
-<b>Cijena:</b> <%= @truck.cijena %><br/>
-<b>Mogucnost zamjene:</b> <%= bool_na_hr(@truck.zamjena) %><br/>
-<b>Slika:</b><br/>
-<% izvor="/system/trucks/slikas/000/000/00"+@truck.id.to_s+"/medium/"+@truck.slika_file_name %>
-<% izvor2="/system/trucks/slikas/000/000/00"+@truck.id.to_s+"/thumb/"+@truck.slika_file_name %>
-<%= image_tag (izvor) %>
-<br/><br/>
 <% @user=User.find(@truck.user_id) %>
-<h4>Podatci o korisniku</h4><br/>
-<%= link_to @user.name, @user %><br/>
-<%= @user.email %><br/>
-<%= @user.phone_number %>
-</p>
+
+<div id="pojedinacni_oglas">
+
+<h3 id="naslov"><%= @truck.naslov%></h3>
+
+<div id="trakica"><p><b>Datum postavljanja oglasa:</b> <%= @truck.created_at.strftime("%d-%m-%Y") %></p></div>
+<br/>
+
+<div id="pojedinacni_oglas_info" align="center">
+<table id="tablica_atributa">
+<tr>
+<td class="keys"><b>Marka:</b></td>
+<td class="values"><%= @truck.marka %></td>
+</tr><tr>
+<td class="keys"><b>Sirina:</b></td>
+<td class="values"><%= @truck.sirina1 %></td>
+</tr><tr>
+<td class="keys"><b>Visina:</b></td>
+<td class="values"><%= @truck.visina %></td>
+</tr><tr>
+<td class="keys"><b>Stanje:</b></td>
+<td class="values"><%= @truck.koristenost %></td>
+</tr><tr>
+<td class="keys"><b>Starost:</b></td>
+<td class="values"><%= @truck.starost %></td>
+</tr><tr>
+<td class="keys"><b>Cijena:</b></td>
+<td class="values"><%= @truck.cijena %></td>
+</tr><tr>
+<td class="keys"><b>Zamjena:</b></td>
+<td class="values"><%= image_tag(bool_na_hr(@truck.zamjena), :size=>"10x10") %></td>
+</tr>
+</table>
+<table id="tablica_opis">
+<tr>
+<td id="key_opis"><b>Dodatan opis:</b></td>
+</tr>
+<td id="value_opis"><%= @truck.dodatan_opis %></td>
+<tr>
+</table>
+</div>
+
+
+
+<div id="pojedinacni_oglas_slika_i_korisnik">
+
+<div id="pojedinacni_oglas_slika">
+
+<% if @truck.slika_file_name %>
+<% string_id = add_zeros(@truck.id) %>
+<% izvor2="/system/trucks/slikas/000/000/"+string_id+"/medium/"+@truck.slika_file_name %>
+<% else %>
+<% izvor2="/images/no photo.png" %>
+<% end %>
+<%= image_tag (izvor2), :id=>"slikica" %>
+
+
+</div>
+<hr>
+<div id="pojedinacni_oglas_korisnik">
+
+<%= link_to @user.name, "/korisnik/#{@user.name}" %><br/>
+<b>E-mail: </b><%= @user.email %><br/>
+<b>Tel: </b><%= @user.phone_number %><br/>
+<b>Zupanija: </b><%= @user.county %>
+</div>
+<br>
+</div>
 </div>

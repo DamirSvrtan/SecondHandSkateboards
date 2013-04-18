@@ -1,24 +1,68 @@
-<div id="pojedinacna_daska">
-<h3>Daska <%= @deck.marka%> <%= @deck.sirina_daske %>"</h3>
-<br/>
-<p><b>Marka:</b> <%= @deck.marka %><br/>
-<b>Sirina daske:</b> <%= @deck.sirina_daske %><br/>
-<b>Stanje:</b> <%= @deck.koristenost %><br/>
-<b>Starost:</b> <%= @deck.starost %><br/>
-<b>Cijena:</b> <%= @deck.cijena %><br/>
-<b>Grip ukljucen:</b> <%= bool_na_hr(@deck.sa_gripom) %><br/>
-<b>Mogucnost zamjene:</b> <%= bool_na_hr(@deck.zamjena) %><br/>
-<b>Slika:</b><br/>
-<% if @deck.slika_file_name %>
-<% izvor="/system/decks/slikas/000/000/00"+@deck.id.to_s+"/medium/"+@deck.slika_file_name %>
-<% izvor2="/system/decks/slikas/000/000/00"+@deck.id.to_s+"/thumb/"+@deck.slika_file_name %>
-<%= image_tag (izvor) %>
-<% end %>
-<br/><br/>
 <% @user=User.find(@deck.user_id) %>
-<h4>Podatci o korisniku</h4><br/>
+
+<div id="pojedinacni_oglas">
+
+<h3 id="naslov"><%= @deck.naslov%></h3>
+
+<div id="trakica"><p><b>Datum postavljanja oglasa:</b> <%= @deck.created_at.strftime("%d-%m-%Y") %></p></div>
+<br/>
+
+<div id="pojedinacni_oglas_info" align="center">
+<table id="tablica_atributa">
+<tr>
+<td class="keys"><b>Marka:</b></td>
+<td class="values"><%= @deck.marka %></td>
+</tr><tr>
+<td class="keys"><b>Sirina:</b></td>
+<td class="values"><%= @deck.sirina_daske %></td>
+</tr><tr>
+<td class="keys"><b>Stanje:</b></td>
+<td class="values"><%= @deck.koristenost %></td>
+</tr><tr>
+<td class="keys"><b>Starost:</b></td>
+<td class="values"><%= @deck.starost %></td>
+</tr><tr>
+<td class="keys"><b>Cijena:</b></td>
+<td class="values"><%= @deck.cijena %></td>
+</tr><tr>
+<td class="keys"><b>Grip:</b></td>
+<td class="values"><%= image_tag(bool_na_hr(@deck.sa_gripom), :size=>"10x10") %></td>
+</tr><tr>
+<td class="keys"><b>Zamjena:</b></td>
+<td class="values"><%= image_tag(bool_na_hr(@deck.zamjena), :size=>"10x10") %></td>
+</tr>
+</table>
+<table id="tablica_opis">
+<tr>
+<td id="key_opis"><b>Dodatan opis:</b></td>
+</tr>
+<td id="value_opis"><%= @deck.dodatan_opis %></td>
+<tr>
+</table>
+</div>
+
+<div id="pojedinacni_oglas_slika_i_korisnik">
+
+<div id="pojedinacni_oglas_slika">
+
+<% if @deck.slika_file_name %>
+<% string_id = add_zeros(@deck.id) %>
+<% izvor2="/system/decks/slikas/000/000/"+string_id+"/medium/"+@deck.slika_file_name %>
+<% else %>
+<% izvor2="/images/no photo.png" %>
+<% end %>
+<%= image_tag (izvor2), :id=>"slikica" %>
+
+
+</div>
+<hr>
+<div id="pojedinacni_oglas_korisnik">
+
 <%= link_to @user.name, @user %><br/>
-<%= @user.email %><br/>
-<%= @user.phone_number %>
-</p>
+<b>E-mail: </b><%= @user.email %><br/>
+<b>Tel: </b><%= @user.phone_number %><br/>
+<b>Zupanija: </b><%= @user.county %>
+</div>
+<br>
+</div>
 </div>

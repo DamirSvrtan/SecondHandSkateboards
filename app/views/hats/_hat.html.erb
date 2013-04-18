@@ -1,0 +1,27 @@
+<tr>
+	<td class="korisnik_oglas_slika">
+		<% if hat.slika_file_name %>
+		<% string_id = add_zeros(hat.id) %>
+		<% izvor2="/system/hats/slikas/000/000/"+string_id+"/thumb/"+hat.slika_file_name %>
+		<% else %>
+		<% izvor2="/images/no photo thumb.png" %>	
+		<% end %>
+		<%= image_tag (izvor2), :id=>"slikica_na_profilu" %>
+	</td>
+	<td class="korisnik_oglas_info">
+		<b>Naslov:</b> <%= hat.naslov %><br>
+		<b>Cijena:</b> <%= hat.cijena %>kn<br> 
+		<b>Oglas predan:</b> <%= hat.created_at.strftime("%d-%m-%Y") %>
+	</td>
+	
+	<td class="korisnik_oglas_linkovi">
+		<%= link_to "Detalji..", hat %><br>
+		<% if current_user?(hat.user) %>
+			<%= link_to "delete", hat, method: :delete,
+ 			                                    data: { confirm: "You sure?" },
+ 			                                    title: hat.marka %><br>
+			<%= link_to "edit", edit_hat_path(hat.id) %>
+		<% end %>
+	</td>
+
+</tr>

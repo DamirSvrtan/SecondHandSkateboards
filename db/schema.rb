@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910140703) do
+ActiveRecord::Schema.define(:version => 20120927130809) do
 
   create_table "clothing_ostalos", :force => true do |t|
     t.integer  "user_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20120910140703) do
     t.string   "slika_content_type"
     t.integer  "slika_file_size"
     t.datetime "slika_updated_at"
+    t.string   "naslov"
   end
 
   add_index "decks", ["user_id", "created_at"], :name => "index_decks_on_user_id_and_created_at"
@@ -121,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20120910140703) do
     t.string   "slika_content_type"
     t.integer  "slika_file_size"
     t.datetime "slika_updated_at"
+    t.boolean  "zamjena"
   end
 
   add_index "skate_ostalos", ["user_id", "created_at"], :name => "index_skate_ostalos_on_user_id_and_created_at"
@@ -143,6 +145,9 @@ ActiveRecord::Schema.define(:version => 20120910140703) do
     t.string   "slika_content_type"
     t.integer  "slika_file_size"
     t.datetime "slika_updated_at"
+    t.string   "naslov"
+    t.string   "starost"
+    t.boolean  "zamjena"
   end
 
   add_index "skates", ["user_id", "created_at"], :name => "index_skates_on_user_id_and_created_at"
@@ -164,6 +169,7 @@ ActiveRecord::Schema.define(:version => 20120910140703) do
     t.string   "slika_content_type"
     t.integer  "slika_file_size"
     t.datetime "slika_updated_at"
+    t.string   "naslov"
   end
 
   add_index "trucks", ["user_id", "created_at"], :name => "index_trucks_on_user_id_and_created_at"
@@ -199,6 +205,7 @@ ActiveRecord::Schema.define(:version => 20120910140703) do
     t.string   "slika_content_type"
     t.integer  "slika_file_size"
     t.datetime "slika_updated_at"
+    t.string   "naslov"
   end
 
   add_index "wheels", ["user_id", "created_at"], :name => "index_wheels_on_user_id_and_created_at"

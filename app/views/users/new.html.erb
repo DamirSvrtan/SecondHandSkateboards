@@ -1,40 +1,65 @@
-<%= provide(:title, 'Sign Up') %>
-<div id='gore'>
-<h1>Registracija</h1>
-
+<%= provide(:title, 'Registracija') %>
+<div id='kontenjer2'>
+<div id="registracijski_naslov">
+<h1 id="naslov">Registracija</h1>
 </div>
 
-<div class="row">
-
-  <div class="span6 offset3">
-
     <%= form_for @user, do |f| %>
+	<div id="registracijske_greske">
       <%= render 'shared/error_messages', object: f.object %>
-
-      <b><%= f.label :name , "Nadimak" %></b>
+	</div>
+	<div id="registracijski_inputi">
+      <b><%= f.label :name , "Nadimak:", id:"nadimak_label" %></b>
       <%= f.text_field :name %>
 
-      <%= f.label :email, "E-mail"%>
+      <%= f.label :email, "E-mail:", id:"email_label"%>
       <%= f.text_field :email %>
 
-      <%= f.label :password, "Lozinka:" %>
+      <%= f.label :password, "Lozinka:", id:"lozinka_label" %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Ponovni unos lozinke:" %>
+      <%= f.label :password_confirmation, "Ponovni unos lozinke:", id:"lozinka_label_confirm" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.label :phone_number, "Telefonski broj:" %>
+      <%= f.label :phone_number, "Telefonski broj:", id:"phone_label" %>
       <%= f.text_field :phone_number %>
 
-      <%= f.label :county, "Zupanija:" %>
-      <%= f.select :county, [['Bjelovarsko-bilogorska',1],['Brodsko-posavska',2],['Dubrovačko-neretvanska',3],['Istarska',4],['Karlovačka',5],['Koprivničko-križevačka',6],['Krapinsko-zagorska',7],['Ličko-senjska',8],['Međimurska',9],['Osječko-baranjska',10],['Požeško-slavonska',11],['Primorsko-goranska',12],['Sisačko-moslavačka',13],['Splitsko-dalmatinska',14],['Šibensko-kninska',15],['Varaždinska','Varazdinska'],['Virovitičko-podravska','Viroviticko-podravska'],['Vukovarsko-srijemska','Vukovarsko-srijemska'],['Zadarska','Zadarska'],['Grad Zagreb','Grad Zagreb'],['Zagrebacka','Zagrebacka']], :include_blank => true  %>
+      <%= f.label :county, "Zupanija:", id:"county_label" %>
+      <%= f.select :county, [['Bjelovarsko-bilogorska','Bjelovarsko-bilogorska'],['Brodsko-posavska','Brodsko-posavska'],['Dubrovačko-neretvanska','Dubrovačko-neretvanska'],['Istarska','Istarska'],['Karlovačka','Karlovačka'],['Koprivničko-križevačka','Koprivničko-križevačka'],['Krapinsko-zagorska','Krapinsko-zagorska'],['Ličko-senjska','Ličko-senjska'],['Međimurska','Međimurska'],['Osječko-baranjska','Osječko-baranjska'],['Požeško-slavonska','Požeško-slavonska'],['Primorsko-goranska','Primorsko-goranska'],['Sisačko-moslavačka','Sisačko-moslavačka'],['Splitsko-dalmatinska','Splitsko-dalmatinska'],['Šibensko-kninska','Šibensko-kninska'],['Varaždinska','Varazdinska'],['Virovitičko-podravska','Viroviticko-podravska'],['Vukovarsko-srijemska','Vukovarsko-srijemska'],['Zadarska','Zadarska'],['Grad Zagreb','Grad Zagreb'],['Zagrebacka','Zagrebacka']], :include_blank => true  %>
       <br/>
-      <%= f.submit "Registriraj se", class: "btn btn-inverse btn-large" %>
+
+
+      <%= f.submit "Registriraj se", class: "btn btn-danger btn-large", id: "registracijski_gumb" %>
     <% end %>
-      <p>Registrirani korisnik? <%= link_to "Prijavi se!", signin_path %></p>
-  </div>
+</div>
+      <p id="regani_korisnik">Registrirani korisnik? <%= link_to "Prijavi se!", signin_path %></p>
+
 </div>
 <script>
 $('ul#sastrane').hide();
+$('.alert').hide();
+
+
+
+
+$('input[name="user[name]"]').bind('input', function() {
+var polje_imena = <%= raw @imena.to_json %>;
+    if(($.inArray($(this).val(), polje_imena))!=-1){
+                $(this).css({'background-color' : '#771B0C'});
+        }
+    else{
+       $(this).css({'background-color' : 'white'});
+        }
+});
+
+$('input[name="user[email]"]').bind('input', function() {
+var polje_mailova = <%= raw @mailovi.to_json %>;
+    if(($.inArray($(this).val(), polje_mailova))!=-1){
+                $(this).css({'background-color' : '#771B0C'});
+        }
+    else{
+       $(this).css({'background-color' : 'white'});
+        }
+});
 </script>
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
@@ -11,24 +11,17 @@
 	<div id="traka_gore">
 			<%= link_to image_tag("/images/logo puknuti.png"), root_path, :id => 'logo_puknuti' %>
 			<p id="shs">OGLASNIK ZA SKATEBOARD OPREMU</p>
-			<ul id="navlist">
-			<li><%= link_to "Pocetna stranica", root_path, :id => 'home' %></li>
-			<li style="color:black">|</li>
-			<li><%= link_to "Muzicki kutak", help_path, :id => 'playlist' %></li>
-			<li style="color:black">|</li>	
-			<li><%= link_to "Info o stranici", about_path, :id => 'info__o_stranici' %></li>
-			</ul>
 
 			<ul id="navlist1">
 			<% if signed_in? %>
 			<li><%= link_to current_user.name, current_user %></li>
-			<li style="color:black">|</li>
+			<li style="color:white">|</li>
 			<li><%= link_to "Settings", edit_user_path(current_user) %></li>
-			<li style="color:black">|</li>
+			<li style="color:white">|</li>
 			<li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
 			<% else %>
 			<li><%= link_to "Prijava", signin_path, :id => 'prijava' %></li>
-			<li style="color:black">|</li>
+			<li style="color:white">|</li>
 			<li><%= link_to "Registracija", signup_path, :id => 'registracija' %></li>
 			<% end %>
 			</ul>
@@ -44,7 +37,20 @@
 		<%= value %>
 	</div>
 <% end %>
+<div id="kontenjer">
 <%= render "shared/sastrane" %>
 <%= yield %>
+</div>
+<hr id="crta_za_jednakost">
 </body>
+<script>
+$('input[name$="cijena]"]').bind('input', function() { 
+    if(isNaN($(this).val() )){
+	        $(this).css({'background-color' : '#771B0C'});
+	}
+  else{
+       $(this).css({'background-color' : 'white'});
+	}
+});
+</script>
 </html>

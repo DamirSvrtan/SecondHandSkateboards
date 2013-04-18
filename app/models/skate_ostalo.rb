@@ -1,5 +1,5 @@
 class SkateOstalo < ActiveRecord::Base
-attr_accessible :naslov, :opis, :cijena, :slika
+attr_accessible :naslov, :opis, :cijena, :slika, :zamjena
 
 has_attached_file :slika, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 

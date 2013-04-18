@@ -1,10 +1,27 @@
-<li>
-  <span class="content"><%= skate.daska_marka %> <%= skate.daska_sirina %> <%= skate.osovine_marka %> <%= skate.osovine_sirina %> <%= skate.kotaci_marka %> <%= skate.kotaci_radijus %> <%= skate.sa_gripom %> <%= skate.koristenost %> <%= skate.cijena %> <%= link_to "Detalji..", skate %><% if current_user?(skate.user) %>
-    <%= link_to "delete", skate, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: skate.marka %>
-    <%= link_to "edit", edit_skate_path(skate.id) %>
-  <% end %></span>
-  <span class="timestamp">
-  </span>
-</li>
+<tr>
+	<td class="korisnik_oglas_slika">
+		<% if skate_ostalo.slika_file_name %>
+		<% string_id = add_zeros(skate_ostalo.id) %>
+		<% izvor2="/system/skate_ostalos/slikas/000/000/"+string_id+"/thumb/"+skate_ostalo.slika_file_name %>
+		<% else %>
+		<% izvor2="/images/no photo thumb.png" %>	
+		<% end %>
+		<%= image_tag (izvor2), :id=>"slikica_na_profilu" %>
+	</td>
+	<td class="korisnik_oglas_info">
+		<b>Naslov:</b> <%= skate_ostalo.naslov %><br>
+		<b>Cijena:</b> <%= skate_ostalo.cijena %>kn<br> 
+		<b>Oglas predan:</b> <%= skate_ostalo.created_at.strftime("%d-%m-%Y") %>
+	</td>
+	
+	<td class="korisnik_oglas_linkovi">
+		<%= link_to "Detalji..", skate_ostalo %><br>
+		<% if current_user?(skate_ostalo.user) %>
+			<%= link_to "delete", skate_ostalo, method: :delete,
+ 			                                    data: { confirm: "You sure?" },
+ 			                                    title: skate_ostalo.naslov %><br>
+			<%= link_to "edit", edit_skate_ostalo_path(skate_ostalo.id) %>
+		<% end %>
+	</td>
+
+</tr>

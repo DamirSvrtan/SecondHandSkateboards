@@ -1,30 +1,37 @@
 <%= form_for @wheel,:url => wheels_path, :html => { :multipart => true } do |d| %>
+  <div id="obrazac5_greske">
   <%= render 'shared/error_messages', object: d.object %>
+  </div>
+  <div id="obrazac5_inputi">
   <div class="field" >
-        <%= d.label :marka %>
+        <%= d.label :naslov, id:"naslov_label" %>
+        <%= d.text_field :naslov %>
+
+        <%= d.label :marka, id:"marka_label" %>
         <%= d.text_field :marka %>
 
-        <%= d.label :radijus %>
-        <%= d.text_field :radijus %>
+        <%= d.label :radijus, id:"radijus_label" %>
+        <%= d.select :radijus, [["51mm","51mm"],["52mm","52mm"],["53mm","53mm"],["54mm","54mm"],["55mm","55mm"],["56mm","56mm"]],:include_blank => true %>
 
-        <%= d.label :koristenost, "Stanje" %>
-        <%= d.text_field :koristenost %>
+        <%= d.label :starost, id:"starost_label" %>
+        <%= d.select :starost, [["Novo","Novo"],["Rabljeno","Rabljeno"]], :include_blank => true %>
 
-        <%= d.label :starost %>
-        <%= d.text_field :starost %>
+        <%= d.label :koristenost, "Stanje", id:"stanje_label" %>
+        <%= d.select :koristenost, [["Odlicno","Odlicno"],["Dobro","Dobro"],["Lose","Lose"]], :include_blank => true %>
 
-        <%= d.label :cijena %>
+        <%= d.label :cijena, "Cijena (kn)", id:"cijena_label"%>
         <%= d.text_field :cijena %>
 
-        <%= d.label :dodatan_opis, "Dodatan opis:" %>
+        <%= d.label :dodatan_opis, "Dodatan opis:", id:"opis_label" %>
         <%= d.text_area :dodatan_opis %>
 
-        <p>Mogucnost zamjene</p>
+	<%= d.label :zamjena, "Mogućnost zamjene", id:"zamjena_label" %>
         <%= d.check_box :zamjena %>
 	<br/>
         <%= d.file_field :slika %>
   </div>
-  <%= d.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= d.submit "Post", class: "btn btn-large btn-danger", id:"wheel_gumb"%>
+</div>
 <% end %>
 
 

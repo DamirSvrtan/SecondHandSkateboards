@@ -1,20 +1,67 @@
-<div id="user_ime">
-<%= @user.name %>
-</div>
-<div id="user_info">
-<p>
-<b>E-mail:</b> <%= @user.email %>
-<br/>
-<b>Telefonski broj:</b> <%= @user.phone_number %>
-<br/>
-<b>Zupanija:</b> <%= @user.county %>
-</p>
+<div id="pojedinacni_profil">
 
-	<% if @user.decks.any? %>
-		<h3> Daske (<%= @user.decks.count %>)</h3>
-	<ol class="decks">
+	<h3 id="naslov"><%= @user.name %></h3>
+
+	<div id="trakica">
+		<p><b>Datum otvaranja profila:</b> <%= @user.created_at.strftime("%d-%m-%Y") %></p>
+	</div>
+
+	<div id="info_o_korisniku">
+		<table id="tablica_atributa">
+			<tr>
+				<td class="keis"><b>E-mail:</b></td>
+				<td class="keis"><b>Tel.broj:</b></td>
+				<td class="keis"><b>Zupanija:</b></td>
+			</tr>
+			<tr>
+				<td class="valus"><%= @user.email %></td>
+				<td class="valus"><%= @user.phone_number %></td>
+				<td class="valus"><%= @user.county %></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="trakica2">
+		<p><b>Korisnikovi oglasi (<%= @user.decks.count + @user.wheels.count + @user.trucks.count + @user.skates.count + @user.clothing_ostalos.count + @user.garments.count + @user.shoes.count + @user.hats.count + @user.skate_ostalos.count %>)</b></p>
+	</div>
+
+	<div id="korisnikovi_oglasi">
+
+
+	<table class="korisnikovi_oglasi">
+			<% if @user.decks.any? %>
                         <%= render @decks %>
-                </ol>
-                <%= will_paginate @decks %>
-    	<% end %> 
+			<% end %>
+			<% if @user.wheels.any? %>
+                        <%= render @wheels %>
+			<% end %>
+			<% if @user.trucks.any? %>
+                        <%= render @trucks %>
+			<% end %>
+			<% if @user.skates.any? %>
+                        <%= render @skates %>
+			<% end %>
+			<% if @user.skate_ostalos.any? %>
+                        <%= render @skate_ostalos %>
+			<% end %>
+			<% if @user.garments.any? %>
+                        <%= render @garments %>
+			<% end %>
+			<% if @user.shoes.any? %>
+                        <%= render @shoes %>
+			<% end %>
+			<% if @user.hats.any? %>
+                        <%= render @hats %>
+			<% end %>
+			<% if @user.clothing_ostalos.any? %>
+                        <%= render @clothing_ostalos %>
+			<% end %>
+        </table>
+
+	</div>
+<hr style="background-color:black">
 </div>
+<script>
+$('.alert').hide();
+
+</script>

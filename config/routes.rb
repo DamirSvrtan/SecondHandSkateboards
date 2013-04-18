@@ -3,15 +3,15 @@ Shs::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [ :new, :create, :destroy]
-  resources :decks, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :wheels, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :trucks, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :skates, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :skate_ostalos, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :shoes, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :garments, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :clothing_ostalos, only: [ :create, :destroy, :index, :show, :edit, :update]
-  resources :hats, only: [ :create, :destroy, :index, :show, :edit, :update]
+  resources :decks, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :wheels, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :trucks, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :skates, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :skate_ostalos, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :shoes, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :garments, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :clothing_ostalos, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
+  resources :hats, only: [ :new, :create, :destroy, :index, :show, :edit, :update]
   resources :password_resets  
 
   match '/signup',  to: 'users#new'
@@ -47,6 +47,8 @@ Shs::Application.routes.draw do
   match 'clothing_ostalos' => 'clothing_ostalos#index'
 
   match 'hats' => 'hats#index'
+
+  match '/korisnik/:name', :to => 'users#show', :as => :show 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

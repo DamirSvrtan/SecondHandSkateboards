@@ -1,23 +1,196 @@
 <% provide(:title, 'Objavi oglas') %>
-<div id="gore">
-<h3>Ovdje ce se odabrati oglasi</h3>
 
 <% if signed_in? %>
-<section>
-<%= render 'shared/decks_form' %>
-</section>
-<div id="lijevo">
-<section>
-<%= render 'shared/trucks_form' %>
-</section>
+<div id="container2">
+	<div id="container2_header"><h4>Izbornik za predaju oglasa:</h4></div>
+	<img id="skate"src="/images/skateboard/skateboard.png" style="position: absolute; left:20px; top:40px;">
+	<img id="skate_hover" class="hover" src="/images/skateboard/skateboard hover.png" style="position: absolute; left:20px; top:40px;">
+	<img id="clothing" src="/images/clothing/clothing.png" style="position: absolute; left:180px; top:40px;"> 
+	<img id="clothing_hover" class="hover" src="/images/clothing/clothing hover.png" style="position: absolute; left:180px; top:40px;">
+	<div id="male_ikone_skate">
+
+		<div id="11" class="okviri">
+			<img src="/images/skateboard/daske.png" style="position: absolute;left:7px;top:5px;">
+		</div>
+		<div id="12" class="okviri">
+			<img src="/images/skateboard/kotaci.png" style="position: absolute;left:24px;top:8px;">
+		</div>
+		<div id="13" class="okviri">
+			<img src="/images/skateboard/osovine.png" style="position: absolute;left:22px;top:5px;">
+		</div>
+		<div id="14" class="okviri">
+			<img src="/images/skateboard/skate komplet.png" style="position: absolute;left:6px;top:8px;">
+		</div>
+		<div id="15" class="okviri">
+			<img src="/images/skateboard/ostalo.png" style="position: absolute;left:23px;top:10px;">
+		</div>
+
+	</div>
+
+	<div id="male_ikone_clothing">
+		<div id="21" class="okviri">
+			<img src="/images/clothing/odjeca.png" style="position: absolute;left:23px;top:3px;">
+		</div>
+		<div id="22" class="okviri">
+			<img src="/images/clothing/obuca.png" style="position: absolute;left:20px;top:10px;">
+		</div>
+		<div id="23" class="okviri">
+			<img src="/images/clothing/kape.png" style="position: absolute;left:16px;top:4px;">
+		</div>
+		<div id="24" class="okviri">
+			<img src="/images/clothing/ostalo.png" style="position: absolute;left:22px;top:2px;">
+		</div>
+	</div>
+
+	<div id="gumb_div">
+			<button id="predaj_oglas_"><h4>Ispuni obrazac<h4></button>
+	</div>
+
 </div>
+<br>
+
+<div class="obrasci" id="obrasci_daske">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Daske</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/decks_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_kotaci">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Kotaci</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/wheels_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_osovine">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Osovine</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/trucks_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_skate_kompleti">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Skate kompleti</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/skates_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_skate_ostalo">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Ostala skate oprema</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/skate_ostalos_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_tenisice">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Tenisice</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/shoes_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_odjeca">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Odjeca</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/garments_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_kape">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Kape</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/hats_form' %>
+<% end %>
+</div>
+<div class="obrasci" id="obrasci_ostalo">
+<div class="obrasci_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Obrazac: Ostalo</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/clothing_ostalos_form' %>
+<% end %>
+</div>
+
 
 <% else %>
 <p>Welcome skaters :)
 <%= link_to "Sign Up!", 'sign_up' %>
 <% end %>
-</div>
 <script>
+
+
 $('ul#sastrane').hide();
+$('#predaj_oglas').hide();
+$('#clothing_hover').hide();
+$('.obrasci').hide();
+
+$('#male_ikone_clothing').hide();
+
+
+var a="";
+$('#skate').click(function(){
+	 		$('#clothing_hover').hide();
+	 		$('#skate_hover').show();
+			$('#male_ikone_skate').show();
+			$('#male_ikone_clothing').hide();
+	 		})
+$('#clothing').click(function(){
+	 		$('#clothing_hover').show();
+	 		$('#skate_hover').hide();
+			$('#male_ikone_skate').hide();
+			$('#male_ikone_clothing').show();
+	 		})
+$('.okviri').click(function(){
+			$(this).css({'background-color' : '#ECC5A8' });
+			$(this).siblings().css({'background-color' : 'inherit' });
+			})
+$('#11').click(function(){
+			a="daske";
+			})
+$('#12').click(function(){
+			a="kotaci";
+			})
+$('#13').click(function(){
+			a="osovine";
+			})
+$('#14').click(function(){
+			a="skate_kompleti";
+			})
+$('#15').click(function(){
+			a="skate_ostalo";
+			})
+$('#21').click(function(){
+			a="odjeca";
+			})
+$('#22').click(function(){
+			a="tenisice";
+			})
+$('#23').click(function(){
+			a="kape";
+			})
+$('#24').click(function(){
+			a="ostalo";
+			})
+$('button#predaj_oglas_').click(function(){
+			var prikazi_obrazac="#obrasci_"+a;
+			$(prikazi_obrazac).siblings('.obrasci').hide();
+			$(prikazi_obrazac).show();
+		
+			})
+
+
+
+
 </script>
 

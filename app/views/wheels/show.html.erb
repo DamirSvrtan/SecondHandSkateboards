@@ -1,21 +1,65 @@
-<div id="pojedinacna_daska">
-<h3>Kotaci <%= @wheel.marka%> <%= @wheel.radijus %>mm</h3>
-<br/>
-<p><b>Marka:</b> <%= @wheel.marka %><br/>
-<b>Radijus:</b> <%= @wheel.radijus %><br/>
-<b>Stanje:</b> <%= @wheel.koristenost %><br/>
-<b>Starost:</b> <%= @wheel.starost %><br/>
-<b>Cijena:</b> <%= @wheel.cijena %><br/>
-<b>Mogucnost zamjene:</b> <%= bool_na_hr(@wheel.zamjena) %><br/>
-<b>Slika:</b><br/>
-<% izvor="/system/wheels/slikas/000/000/00"+@wheel.id.to_s+"/medium/"+@wheel.slika_file_name %>
-<% izvor2="/system/wheels/slikas/000/000/00"+@wheel.id.to_s+"/thumb/"+@wheel.slika_file_name %>
-<%= image_tag (izvor) %>
-<br/><br/>
 <% @user=User.find(@wheel.user_id) %>
-<h4>Podatci o korisniku</h4><br/>
-<%= link_to @user.name, @user %><br/>
-<%= @user.email %><br/>
-<%= @user.phone_number %>
-</p>
+
+<div id="pojedinacni_oglas">
+
+	<h3 id="naslov"><%= @wheel.naslov%></h3>
+
+	<div id="trakica"><p><b>Datum postavljanja oglasa:</b> <%= @wheel.created_at.strftime("%d-%m-%Y") %></p></div>
+	<br/>
+
+<div id="pojedinacni_oglas_info" align="center">
+<table id="tablica_atributa">
+<tr>
+<td class="keys"><b>Marka:</b></td>
+<td class="values"><%= @wheel.marka %></td>
+</tr><tr>
+<td class="keys"><b>Radijus:</b></td>
+<td class="values"><%= @wheel.radijus %></td>
+</tr><tr>
+<td class="keys"><b>Stanje:</b></td>
+<td class="values"><%= @wheel.koristenost %></td>
+</tr><tr>
+<td class="keys"><b>Starost:</b></td>
+<td class="values"><%= @wheel.starost %></td>
+</tr><tr>
+<td class="keys"><b>Cijena:</b></td>
+<td class="values"><%= @wheel.cijena %></td>
+</tr><tr>
+<td class="keys"><b>Zamjena:</b></td>
+<td class="values"><%= image_tag(bool_na_hr(@wheel.zamjena), :size=>"10x10") %></td>
+</tr>
+</table>
+<table id="tablica_opis">
+<tr>
+<td id="key_opis"><b>Dodatan opis:</b></td>
+</tr>
+<td id="value_opis"><%= @wheel.dodatan_opis %></td>
+<tr>
+</table>
+</div>
+
+
+<div id="pojedinacni_oglas_slika_i_korisnik">
+
+	<div id="pojedinacni_oglas_slika">
+
+		<% if @wheel.slika_file_name %>
+		<% string_id = add_zeros(@wheel.id) %>
+		<% izvor2="/system/wheels/slikas/000/000/"+string_id+"/medium/"+@wheel.slika_file_name %>
+		<% else %>
+		<% izvor2="/images/no photo.png" %>
+		<% end %>
+		<%= image_tag (izvor2), :id=>"slikica" %>
+
+	</div>
+	<hr>
+	<div id="pojedinacni_oglas_korisnik">
+
+		<%= link_to @user.name, @user %><br/>
+		<b>E-mail: </b><%= @user.email %><br/>
+		<b>Tel: </b><%= @user.phone_number %><br/>
+		<b>Zupanija: </b><%= @user.county %>
+	</div>
+	<br>
+</div>
 </div>

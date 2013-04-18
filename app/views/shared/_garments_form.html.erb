@@ -1,36 +1,41 @@
 <%= form_for @garment,:url => garments_path, :html => { :multipart => true } do |d| %>
+  <div id="obrazac5_greske">
   <%= render 'shared/error_messages', object: d.object %>
+  </div>
+  <div id="obrazac5_inputi">
   <div class="field" >
-	<%= d.label :naslov %>
+        <%= d.label :naslov, id:"naslov_label" %>
         <%= d.text_field :naslov %>
 
-        <%= d.label :vrsta %>
-        <%= d.text_field :vrsta %>
- 
-        <%= d.label :marka %>
+        <%= d.label :marka, id:"marka_label" %>
         <%= d.text_field :marka %>
 
-        <%= d.label :velicina %>
-        <%= d.text_field :velicina %>
+        <%= d.label :vrsta, "Vrsta", id:"radijus_label" %>
+        <%= d.select :vrsta, [["T-Shirt","T-Shirt"],["Hoodie","Hoodie"],["Hlace","Hlace"],["---","---"]], :include_blank => true %>
 
-        <%= d.label :koristenost, "Stanje" %>
-        <%= d.text_field :koristenost %>
+        <%= d.label :velicina,"Velicina", id:"visina_label" %>
+        <%= d.select :velicina, [["S","S"],["M","M"],["L","L"],["XL","XL"],["XXL","XXL"],["XXXL","XXXL"]],:include_blank => true %>
 
-        <%= d.label :starost %>
-        <%= d.text_field :starost %>
+        <%= d.label :starost, id:"starost1_label" %>
+        <%= d.select :starost, [["Novo","Novo"],["Rabljeno","Rabljeno"]], :include_blank => true %>
 
-        <%= d.label :cijena %>
+        <%= d.label :koristenost, "Stanje", id:"stanje1_label" %>
+        <%= d.select :koristenost, [["Odlicno","Odlicno"],["Dobro","Dobro"],["Lose","Lose"]], :include_blank => true %>
+
+        <%= d.label :cijena, id:"cijena1_label"%>
         <%= d.text_field :cijena %>
 
-        <%= d.label :dodatan_opis, "Dodatan opis:" %>
+        <%= d.label :dodatan_opis, "Dodatan opis:", id:"opis1_label" %>
         <%= d.text_area :dodatan_opis %>
 
-        <p>Mogucnost zamjene</p>
+	<%= d.label :zamjena, "Zamjena?", id:"zamjena3_label" %>
         <%= d.check_box :zamjena %>
 	<br/>
         <%= d.file_field :slika %>
   </div>
-  <%= d.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= d.submit "Post", class: "btn btn-large btn-danger", id:"wheel_gumb"%>
+</div>
 <% end %>
+
 
 

@@ -1,10 +1,27 @@
-<li>
-  <span class="content"><%= deck.marka %> <%= deck.sirina_daske %> <%= deck.koristenost %> <%= deck.starost %>  <%= deck.cijena %> <%= link_to "Detalji..", deck %><% if current_user?(deck.user) %>
-    <%= link_to "delete", deck, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: deck.marka %>
-    <%= link_to "edit", edit_deck_path(deck.id) %>
-  <% end %></span>
-  <span class="timestamp">
-  </span>
-</li>
+<tr>
+	<td class="korisnik_oglas_slika">
+		<% if deck.slika_file_name %>
+		<% string_id = add_zeros(deck.id) %>
+		<% izvor2="/system/decks/slikas/000/000/"+string_id+"/thumb/"+deck.slika_file_name %>
+		<% else %>
+		<% izvor2="/images/no photo thumb.png" %>	
+		<% end %>
+		<%= image_tag (izvor2), :id=>"slikica_na_profilu" %>
+	</td>
+	<td class="korisnik_oglas_info">
+		<b>Naslov:</b> <%= deck.naslov %><br>
+		<b>Cijena:</b> <%= deck.cijena %>kn<br> 
+		<b>Oglas predan:</b> <%= deck.created_at.strftime("%d-%m-%Y") %>
+	</td>
+	
+	<td class="korisnik_oglas_linkovi">
+		<%= link_to "Detalji..", deck %><br>
+		<% if current_user?(deck.user) %>
+			<%= link_to "delete", deck, method: :delete,
+ 			                                    data: { confirm: "You sure?" },
+ 			                                    title: deck.marka %><br>
+			<%= link_to "edit", edit_deck_path(deck.id) %>
+		<% end %>
+	</td>
+
+</tr>

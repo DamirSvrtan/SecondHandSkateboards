@@ -1,10 +1,27 @@
-<li>
-  <span class="content"><%= truck.marka %> <%= truck.sirina1 %> <%= truck.sirina2 %> <%= truck.visina %> <%= truck.koristenost %> <%= truck.starost %>  <%= truck.cijena %> <%= link_to "Detalji..", truck %><% if current_user?(truck.user) %>
-    <%= link_to "delete", truck, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: truck.marka %>
-    <%= link_to "edit", edit_truck_path(truck.id) %>
-  <% end %></span>
-  <span class="timestamp">
-  </span>
-</li>
+<tr>
+	<td class="korisnik_oglas_slika">
+		<% if truck.slika_file_name %>
+		<% string_id = add_zeros(truck.id) %>
+		<% izvor2="/system/trucks/slikas/000/000/"+string_id+"/thumb/"+truck.slika_file_name %>
+		<% else %>
+		<% izvor2="/images/no photo thumb.png" %>	
+		<% end %>
+		<%= image_tag (izvor2), :id=>"slikica_na_profilu" %>
+	</td>
+	<td class="korisnik_oglas_info">
+		<b>Naslov:</b> <%= truck.naslov %><br>
+		<b>Cijena:</b> <%= truck.cijena %>kn<br> 
+		<b>Oglas predan:</b> <%= truck.created_at.strftime("%d-%m-%Y") %>
+	</td>
+	
+	<td class="korisnik_oglas_linkovi">
+		<%= link_to "Detalji..", truck %><br>
+		<% if current_user?(truck.user) %>
+			<%= link_to "delete", truck, method: :delete,
+ 			                                    data: { confirm: "You sure?" },
+ 			                                    title: truck.marka %><br>
+			<%= link_to "edit", edit_truck_path(truck.id) %>
+		<% end %>
+	</td>
+
+</tr>

@@ -7,9 +7,9 @@ def create
 	user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_back_or user
+      redirect_to root_path
     else
-      flash.now[:error] = 'Unesena kriva kombinacija E-maila i Lozinke. Probaj opet! U slucaju zaboravljanja lozinke posalji mail na podrska@2ndHandSkaters.com'
+      flash.now[:error] = 'Unesena kriva kombinacija E-maila i Lozinke'
       render 'new'
     end
 end

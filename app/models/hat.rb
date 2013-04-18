@@ -5,7 +5,7 @@ has_attached_file :slika, :styles => { :medium => "300x300>", :thumb => "100x100
 
 belongs_to :user
 
-validates :naslov, presence:true
+validates :naslov, presence: true
 validates :marka, presence: true
 validates :velicina, presence: true
 validates :koristenost, presence: true

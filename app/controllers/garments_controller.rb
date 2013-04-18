@@ -2,6 +2,10 @@ class GarmentsController < ApplicationController
   before_filter :correct_user, only: [:destroy, :edit, :update]
   helper_method :sort_column, :sort_direction
 
+  def new
+         @garment = current_user.garments.build if signed_in?
+  end
+
   def index
         @garments = Garment.order(sort_column + " " + sort_direction)
         @users = User.all
@@ -20,7 +24,6 @@ class GarmentsController < ApplicationController
   def update
     @garment = Garment.find(params[:id])
     if @garment.update_attributes(params[:garment])
-      flash[:success] = "Oglas editiran!"
       redirect_to @garment
     else
       render 'edit'
@@ -33,10 +36,9 @@ class GarmentsController < ApplicationController
         @truck = current_user.trucks.build(params[:truck])
 
     if @garment.save
-      flash[:success] = "Napravljen oglas!"
       redirect_to garments_path
     else
-      render 'static_pages/objavi'
+      render 'garments/new'
     end
   end
 

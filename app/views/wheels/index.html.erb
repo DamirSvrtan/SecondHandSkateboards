@@ -1,5 +1,5 @@
 <div id="daske_lista">
-<h1 id="naslov">Kotači</h1>
+<h1 id="naslov1">Kotači</h1>
 <br/>
 <table id="wheel_table", class="fixed_table", style="margin-top:-10px;">
     <col width="100px" />
@@ -16,9 +16,9 @@
   <th><%= sortable "cijena" %></th>
   <th><b>Detalji</b></th>
 </tr>
+<% if @wheels.any? %>
 <% for wheel in @wheels %>
 <tr style="border-bottom:thin solid;height:50px;">
-
 <% if wheel.slika_file_name %>
 <% string_id = add_zeros(wheel.id) %>
 <% izvor2="/system/wheels/slikas/000/000/"+string_id+"/thumb/"+wheel.slika_file_name %>
@@ -36,4 +36,6 @@
 <% end %>
 </table>
 <%= will_paginate @wheels %>
+<% else %>
+<% end %>
 </div>

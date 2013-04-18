@@ -1,37 +1,11 @@
-<%= provide(:title, 'Edit') %>
-<div id='gore'>
-<h1>Unesi promjene</h1>
-
+<div id="obrazac5">
+<div id="obrazac5_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Editiraj: Daske</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/decks_form' %>
+<% end %>
 </div>
 
-<div class="row">
 
-  <div class="span6 offset3">
-
-    <%= form_for(@deck) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <%= f.label :marka %>
-      <%= f.text_field :marka %>
-
-      <%= f.label :sirina_daske %>
-      <%= f.text_field :sirina_daske %>
-
-      <%= f.label :koristenost, "Stanje" %>
-      <%= f.text_field :koristenost %>
-
-        <%= f.label :starost %>
-        <%= f.text_field :starost %>
-
-        <%= f.label :cijena %>
-        <%= f.text_field :cijena %>
-        <p>Sa gripom</p>
-        <%= f.check_box :sa_gripom %>
-        <p>Mogucnost zamjene</p>
-        <%= f.check_box :zamjena %>
-
-      <br/>
-      <%= f.submit "Spremi promjene", class: "btn btn-inverse btn-large" %>
-    <% end %>
-  </div>
 

@@ -1,30 +1,40 @@
-<%= form_for @deck,:url => decks_path, :html => { :multipart => true } do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field" >
-	<%= f.label :marka %>
-	<%= f.text_field :marka %>
-
-	<%= f.label :sirina_daske %>
-	<%= f.text_field :sirina_daske %>
-
-	<%= f.label :koristenost, "Stanje" %>
-	<%= f.text_field :koristenost %>
-
-	<%= f.label :starost %>
-	<%= f.text_field :starost %>
-
-	<%= f.label :cijena %>
-	<%= f.text_field :cijena %>
-	
-	<%= f.label :dodatan_opis, "Dodatan opis:" %>
-	<%= f.text_area :dodatan_opis %>
-	
-	<p>Sa gripom</p>
-        <%= f.check_box :sa_gripom %>
-        <p>Mogucnost zamjene</p>
-        <%= f.check_box :zamjena %>
-	<br/>
-	<%= f.file_field :slika %>
+<%= form_for @deck,:url => decks_path, :html => { :multipart => true } do |d| %>
+  <div id="obrazac5_greske">
+  <%= render 'shared/error_messages', object: d.object %>
   </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <div id="obrazac5_inputi">
+  <div class="field" >
+        <%= d.label :naslov, id:"naslov_label" %>
+        <%= d.text_field :naslov %>
+
+        <%= d.label :marka, id:"marka_label" %>
+        <%= d.text_field :marka %>
+
+        <%= d.label :sirina_daske, "Sirina", id:"radijus_label" %>
+        <%= d.select :sirina_daske, [["51mm","51mm"],["52mm","52mm"],["53mm","53mm"],["54mm","54mm"],["55mm","55mm"],["56mm","56mm"]],:include_blank => true %>
+
+        <%= d.label :starost, id:"starost_label" %>
+        <%= d.select :starost, [["Novo","Novo"],["Rabljeno","Rabljeno"]], :include_blank => true %>
+
+        <%= d.label :koristenost, "Stanje", id:"stanje_label" %>
+        <%= d.select :koristenost, [["Odlicno","Odlicno"],["Dobro","Dobro"],["Lose","Lose"]], :include_blank => true %>
+
+        <%= d.label :cijena, "Cijena (kn)", id:"cijena_label"%>
+        <%= d.text_field :cijena %>
+
+        <%= d.label :dodatan_opis, "Dodatan opis:", id:"opis_label" %>
+        <%= d.text_area :dodatan_opis %>
+
+	<%= d.label :sa_gripom, "Grip?", id:"grip_label" %>
+        <%= d.check_box :sa_gripom %>
+	
+	<%= d.label :zamjena, "Zamjena?", id:"zamjena2_label" %>
+        <%= d.check_box :zamjena %>
+	<br/>
+        <%= d.file_field :slika %>
+  </div>
+  <%= d.submit "Post", class: "btn btn-large btn-danger", id:"wheel_gumb"%>
+</div>
 <% end %>
+
+

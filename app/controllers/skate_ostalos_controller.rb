@@ -2,6 +2,10 @@ class SkateOstalosController < ApplicationController
   before_filter :correct_user, only: [:destroy, :edit, :update]
   helper_method :sort_column, :sort_direction
 
+  def new
+         @skate_ostalo = current_user.skate_ostalos.build if signed_in?
+  end
+
   def index
         @skate_ostalos = SkateOstalo.order(sort_column + " " + sort_direction)
         @users = User.all
@@ -20,7 +24,6 @@ class SkateOstalosController < ApplicationController
   def update
     @skate_ostalo = SkateOstalo.find(params[:id])
     if @skate_ostalo.update_attributes(params[:skate_ostalo])
-      flash[:success] = "Oglas editiran!"
       redirect_to @skate_ostalo
     else
       render 'edit'
@@ -33,10 +36,9 @@ class SkateOstalosController < ApplicationController
         @truck = current_user.trucks.build(params[:truck])
 
     if @skate_ostalo.save
-      flash[:success] = "Napravljen oglas!"
       redirect_to skate_ostalos_path
     else
-      render 'static_pages/objavi'
+      render 'skate_ostalo/new'
     end
   end
 

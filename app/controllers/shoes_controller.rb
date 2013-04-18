@@ -2,6 +2,10 @@ class ShoesController < ApplicationController
   before_filter :correct_user, only: [:destroy, :edit, :update]
   helper_method :sort_column, :sort_direction
 
+  def new
+         @shoe = current_user.shoes.build if signed_in?
+  end
+
   def index
         @shoes = Shoe.order(sort_column + " " + sort_direction)
         @users = User.all
@@ -19,7 +23,6 @@ class ShoesController < ApplicationController
   def update
     @shoe = Shoe.find(params[:id])
     if @shoe.update_attributes(params[:shoe])
-      flash[:success] = "Oglas editiran!"
       redirect_to @shoe
     else
       render 'edit'
@@ -32,10 +35,9 @@ class ShoesController < ApplicationController
         @truck = current_user.trucks.build(params[:truck])
 
     if @shoe.save
-      flash[:success] = "Napravljen oglas!"
       redirect_to shoes_path
     else
-      render 'static_pages/objavi'
+      render 'shoes/new'
     end
   end
 

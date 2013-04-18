@@ -2,6 +2,10 @@ class ClothingOstalosController < ApplicationController
   before_filter :correct_user, only: [:destroy, :edit, :update]
   helper_method :sort_column, :sort_direction
 
+  def new
+         @clothing_ostalo = current_user.clothing_ostalos.build if signed_in?
+  end
+
   def index
         @clothing_ostalos = ClothingOstalo.order(sort_column + " " + sort_direction)
         @users = ClothingOstalo.all
@@ -36,7 +40,7 @@ class ClothingOstalosController < ApplicationController
       flash[:success] = "Napravljen oglas!"
       redirect_to clothing_ostalos_path
     else
-      render 'static_pages/objavi'
+      render 'clothing_ostalos/new'
     end
   end
 

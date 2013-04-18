@@ -2,6 +2,10 @@ class WheelsController < ApplicationController
   before_filter :correct_user, only: [:destroy, :edit, :update]
   helper_method :sort_column, :sort_direction
 
+  def new
+	 @wheel = current_user.wheels.build if signed_in?
+  end
+
   def index
         @wheels = Wheel.order(sort_column + " " + sort_direction)
         @users = User.all
@@ -20,7 +24,6 @@ class WheelsController < ApplicationController
   def update
     @wheel = Wheel.find(params[:id])
     if @wheel.update_attributes(params[:wheel])
-      flash[:success] = "Oglas editiran!"
       redirect_to @wheel
     else
       render 'edit'
@@ -33,10 +36,9 @@ class WheelsController < ApplicationController
         @truck = current_user.trucks.build(params[:truck])
 
     if @wheel.save
-      flash[:success] = "Napravljen oglas!"
       redirect_to wheels_path
     else
-      render 'static_pages/objavi'
+      render 'wheels/new'
     end
   end
 

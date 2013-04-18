@@ -1,36 +1,40 @@
 <%= form_for @truck,:url => trucks_path, :html => { :multipart => true } do |d| %>
+  <div id="obrazac5_greske">
   <%= render 'shared/error_messages', object: d.object %>
+  </div>
+  <div id="obrazac5_inputi">
   <div class="field" >
-        <%= d.label :marka %>
+        <%= d.label :naslov, id:"naslov_label" %>
+        <%= d.text_field :naslov %>
+
+        <%= d.label :marka, id:"marka_label" %>
         <%= d.text_field :marka %>
 
-        <%= d.label :sirina1, "Sirina(inch)" %>
-        <%= d.text_field :sirina1 %>
+        <%= d.label :sirina1,"Sirina", id:"radijus_label" %>
+        <%= d.select :sirina1, [["119","119"],["129","129"],["139","139"],["149","149"]],:include_blank => true %>
 
-	<%= d.label :sirina2, "Sirina(mm)" %>
-        <%= d.text_field :sirina2 %>
+        <%= d.label :visina, "Visina", id:"visina_label" %>
+        <%= d.select :visina, [["HIGH","HIGH"],["MID","MID"],["LOW","LOW"],["---","---"]], :include_blank => true %>
 
-        <%= d.label :visina %>
-        <%= d.text_field :visina %>
+        <%= d.label :starost, id:"starost1_label" %>
+        <%= d.select :starost, [["Novo","Novo"],["Rabljeno","Rabljeno"]], :include_blank => true %>
 
-        <%= d.label :koristenost, "Stanje" %>
-        <%= d.text_field :koristenost %>
+        <%= d.label :koristenost, "Stanje", id:"stanje1_label" %>
+        <%= d.select :koristenost, [["Odlicno","Odlicno"],["Dobro","Dobro"],["Lose","Lose"]], :include_blank => true %>
 
-        <%= d.label :starost %>
-        <%= d.text_field :starost %>
-
-        <%= d.label :cijena %>
+        <%= d.label :cijena, id:"cijena1_label"%>
         <%= d.text_field :cijena %>
 
-        <%= d.label :dodatan_opis, "Dodatan opis:" %>
+        <%= d.label :dodatan_opis, "Dodatan opis:", id:"opis1_label" %>
         <%= d.text_area :dodatan_opis %>
 
-        <p>Mogucnost zamjene</p>
+	<%= d.label :zamjena, "Zamjena?", id:"zamjena3_label" %>
         <%= d.check_box :zamjena %>
-        <br/>
+	<br/>
         <%= d.file_field :slika %>
   </div>
-  <%= d.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= d.submit "Post", class: "btn btn-large btn-danger", id:"wheel_gumb"%>
+</div>
 <% end %>
 
 

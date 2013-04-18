@@ -1,5 +1,5 @@
 <div id="daske_lista">
-<h1 id="naslov">Daske</h1>
+<h1 id="naslov1">Daske</h1>
 <br/>
 <table id="deck_table", class="fixed_table" style="margin-top:-10px;">
     <col width="100px" />
@@ -12,14 +12,14 @@
 <tr id="prva_traka", style="height:30px;">
   <th>Slika</th>
   <th><%= sortable "marka" %></th>
-  <th><%= sortable "koristenost", "Stanje" %></th> 
+  <th><%= sortable "starost", "Starost" %></th> 
   <th><%= sortable "sirina_daske", "Sirina" %></th>
   <th><%= sortable "sa_gripom", "Grip" %></th>
   <th><%= sortable "cijena" %></th>
   <th><b>Detalji</b></th>
 </tr>
 <% for deck in @decks %>
-<tr style="border-bottom:thin solid;height:50px;">
+<tr style="border-bottom:thin solid #a6a4a4;height:50px;">
 
 <% if deck.slika_file_name %>
 <% string_id = add_zeros(deck.id) %>
@@ -28,17 +28,20 @@
 <% izvor2="/images/no photo1.png" %>
 <% end %>
 
-<td><%= image_tag izvor2, :size => "30x30", :class => "za_povecat" %></td>
+<td><%= image_tag izvor2, :size => "50x50", :class => "za_povecat" %></td>
 <td><%= deck.marka.capitalize %></td>
-<td><%= deck.koristenost.capitalize %></td>
+<td><%= deck.starost.capitalize %></td>
 <td><%= deck.sirina_daske %></td>
-<td><%= deck.sa_gripom %></td>
+<td><%= image_tag(bool_na_hr(deck.sa_gripom), :size=>"10x10") %></td>
 <td><%= deck.cijena %></td>
 <td><%= link_to "Detalji", deck %></td>
 </tr>
-
 <% end %>
 </table>
 <%= will_paginate @decks %>
 </div>
 
+<script>
+$('.pagination li:first-child a').text('Prethodna');
+$('.pagination li:last-child a').text('Sljedeca');
+</script>

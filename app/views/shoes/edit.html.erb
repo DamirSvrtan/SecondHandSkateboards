@@ -1,42 +1,11 @@
-<%= provide(:title, 'Edit') %>
-<div id='gore'>
-<h1>Unesi promjene</h1>
-
+<div id="obrazac5">
+<div id="obrazac5_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Editiraj: Tenisice</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/shoes_form' %>
+<% end %>
 </div>
 
-<div class="row">
 
-  <div class="span6 offset3">
-
-    <%= form_for(@hat) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <%= f.label :naslov %>
-      <%= f.text_field :naslov %>
-
-      <%= f.label :marka %>
-      <%= f.text_field :marka %>
-
-      <%= f.label :velicina %>
-      <%= f.text_field :velicina %>
-
-      <%= f.label :koristenost, "Stanje" %>
-      <%= f.text_field :koristenost %>
-
-        <%= f.label :starost %>
-        <%= f.text_field :starost %>
-
-        <%= f.label :cijena %>
-        <%= f.text_field :cijena %>
-
-	<%= f.label :dodatan_opis %>
-        <%= f.text_field :dodatan_opis %>
-       
-        <p>Mogucnost zamjene</p>
-        <%= f.check_box :zamjena %>
-
-      <br/>
-      <%= f.submit "Spremi promjene", class: "btn btn-inverse btn-large" %>
-    <% end %>
-  </div>
 

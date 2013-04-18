@@ -1,50 +1,11 @@
-<%= provide(:title, 'Edit') %>
-<div id='gore'>
-<h1>Unesi promjene</h1>
-
+<div id="obrazac5">
+<div id="obrazac5_naslov">
+<h3 style="color:white;margin-left:10px;"><b>Editiraj: Skate komplet</b></h3>
+</div>
+<% if signed_in? %>
+<%= render 'shared/skates_form' %>
+<% end %>
 </div>
 
-<div class="row">
 
-  <div class="span6 offset3">
-
-    <%= form_for(@skate) do |d| %>
-      <%= render 'shared/error_messages', object: d.object %>
-
-      <%= d.label :daska_marka %>
-        <%= d.text_field :daska_marka %>
-
-        <%= d.label :daska_sirina %>
-        <%= d.text_field :daska_sirina %>
-
-        <%= d.label :osovine_marka %>
-        <%= d.text_field :osovine_marka %>
-
-        <%= d.label :osovine_sirina %>
-        <%= d.text_field :osovine_sirina %>
-
-        <%= d.label :kotaci_marka %>
-        <%= d.text_field :kotaci_marka %>
-
-        <%= d.label :kotaci_radijus %>
-        <%= d.text_field :kotaci_radijus %>
-
-        <%= d.label :koristenost, "Stanje" %>
-        <%= d.text_field :koristenost %>
-
-        <%= d.label :cijena %>
-        <%= d.text_field :cijena %>
-
-        <%= d.label :dodatan_opis, "Dodatan opis:" %>
-        <%= d.text_area :dodatan_opis %>
-
-        <p>Grip</p>
-        <%= d.check_box :sa_gripom %>
-        <br/>
-        <%= d.file_field :slika %>
-
-      <br/>
-      <%= d.submit "Spremi promjene", class: "btn btn-inverse btn-large" %>
-    <% end %>
-  </div>
 

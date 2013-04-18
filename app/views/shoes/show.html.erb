@@ -1,21 +1,66 @@
-<div id="pojedinacna_daska">
-<h3>Odjevni predmet <%= @shoe.marka%> <%= @shoe.velicina %> </h3>
-<br/>
-<p><b>Marka:</b> <%= @shoe.marka %><br/>
-<b>Velicina:</b> <%= @shoe.velicina %><br/>
-<b>Stanje:</b> <%= @shoe.koristenost %><br/>
-<b>Starost:</b> <%= @shoe.starost %><br/>
-<b>Cijena:</b> <%= @shoe.cijena %><br/>
-<b>Mogucnost zamjene:</b> <%= bool_na_hr(@shoe.zamjena) %><br/>
-<b>Slika:</b><br/>
-<% izvor="/system/shoes/slikas/000/000/00"+@shoe.id.to_s+"/medium/"+@shoe.slika_file_name %>
-<% izvor2="/system/shoes/slikas/000/000/00"+@shoe.id.to_s+"/thumb/"+@shoe.slika_file_name %>
-<%= image_tag (izvor) %>
-<br/><br/>
 <% @user=User.find(@shoe.user_id) %>
-<h4>Podatci o korisniku</h4><br/>
-<%= link_to @user.name, @user %><br/>
-<%= @user.email %><br/>
-<%= @user.phone_number %>
-</p>
+
+<div id="pojedinacni_oglas">
+
+<h3 id="naslov"><%= @shoe.naslov%></h3>
+
+<div id="trakica"><p><b>Datum postavljanja oglasa:</b> <%= @shoe.created_at.strftime("%d-%m-%Y") %></p></div>
+<br/>
+
+<div id="pojedinacni_oglas_info" align="center">
+<table id="tablica_atributa">
+<tr>
+<td class="keys"><b>Marka:</b></td>
+<td class="values"><%= @shoe.marka %></td>
+</tr><tr>
+<td class="keys"><b>Velicina:</b></td>
+<td class="values"><%= @shoe.velicina %></td>
+</tr><tr>
+<td class="keys"><b>Stanje:</b></td>
+<td class="values"><%= @shoe.koristenost %></td>
+</tr><tr>
+<td class="keys"><b>Starost:</b></td>
+<td class="values"><%= @shoe.starost %></td>
+</tr><tr>
+<td class="keys"><b>Cijena:</b></td>
+<td class="values"><%= @shoe.cijena %></td>
+</tr><tr>
+<td class="keys"><b>Zamjena:</b></td>
+<td class="values"><%= image_tag(bool_na_hr(@shoe.zamjena), :size=>"10x10") %></td>
+</tr>
+</table>
+<table id="tablica_opis">
+<tr>
+<td id="key_opis"><b>Dodatan opis:</b></td>
+</tr>
+<td id="value_opis"><%= @shoe.dodatan_opis %></td>
+<tr>
+</table>
+</div>
+
+
+<div id="pojedinacni_oglas_slika_i_korisnik">
+
+<div id="pojedinacni_oglas_slika">
+
+<% if @shoe.slika_file_name %>
+<% string_id = add_zeros(@shoe.id) %>
+<% izvor2="/system/shoes/slikas/000/000/"+string_id+"/medium/"+@shoe.slika_file_name %>
+<% else %>
+<% izvor2="/images/no photo.png" %>
+<% end %>
+<%= image_tag (izvor2), :id=>"slikica" %>
+
+
+</div>
+<hr>
+<div id="pojedinacni_oglas_korisnik">
+
+<%= link_to @user.name, "/korisnik/#{@user.name}" %><br/>
+<b>E-mail: </b><%= @user.email %><br/>
+<b>Tel: </b><%= @user.phone_number %><br/>
+<b>Zupanija: </b><%= @user.county %>
+</div>
+<br>
+</div>
 </div>

@@ -1,10 +1,27 @@
-<li>
-  <span class="content"><%= wheel.marka %> <%= wheel.sirina_daske %> <%= wheel.koristenost %> <%= wheel.starost %>  <%= wheel.cijena %> <%= link_to "Detalji..", wheel %><% if current_user?(wheel.user) %>
-    <%= link_to "delete", wheel, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: wheel.marka %>
-    <%= link_to "edit", edit_wheel_path(wheel.id) %>
-  <% end %></span>
-  <span class="timestamp">
-  </span>
-</li>
+<tr>
+	<td class="korisnik_oglas_slika">
+		<% if wheel.slika_file_name %>
+		<% string_id = add_zeros(wheel.id) %>
+		<% izvor2="/system/wheels/slikas/000/000/"+string_id+"/thumb/"+wheel.slika_file_name %>
+		<% else %>
+		<% izvor2="/images/no photo thumb.png" %>	
+		<% end %>
+		<%= image_tag (izvor2), :id=>"slikica_na_profilu" %>
+	</td>
+	<td class="korisnik_oglas_info">
+		<b>Naslov:</b> <%= wheel.naslov %><br>
+		<b>Cijena:</b> <%= wheel.cijena %>kn<br> 
+		<b>Oglas predan:</b> <%= wheel.created_at.strftime("%d-%m-%Y") %>
+	</td>
+	
+	<td class="korisnik_oglas_linkovi">
+		<%= link_to "Detalji..", wheel %><br>
+		<% if current_user?(wheel.user) %>
+			<%= link_to "delete", wheel, method: :delete,
+ 			                                    data: { confirm: "You sure?" },
+ 			                                    title: wheel.marka %><br>
+			<%= link_to "edit", edit_wheel_path(wheel.id) %>
+		<% end %>
+	</td>
+
+</tr>

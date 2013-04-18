@@ -2,10 +2,15 @@ class DecksController < ApplicationController
   before_filter :correct_user, only: [:destroy, :edit, :update]
   helper_method :sort_column, :sort_direction
 
+
+  def new
+         @deck = current_user.decks.build if signed_in?
+  end
+
   def index
 	@decks = Deck.order(sort_column + " " + sort_direction)
 	@users = User.all
-	@decks = @decks.paginate(:page => params[:page], :per_page => 7)
+	@decks = @decks.paginate(:page => params[:page], :per_page => 6)
 
   end
 
@@ -20,7 +25,6 @@ class DecksController < ApplicationController
   def update
     @deck = Deck.find(params[:id])
     if @deck.update_attributes(params[:deck])
-      flash[:success] = "Oglas editiran!"
       redirect_to @deck
     else
       render 'edit'
@@ -36,10 +40,9 @@ class DecksController < ApplicationController
 	@skate_ostalo = current_user.skate_ostalos.build(params[:skate_ostalo])
 
     if @deck.save
-      flash[:success] = "Napravljen oglas!"
       redirect_to decks_path
     else
-      render 'static_pages/objavi'
+      render 'decks/new'
     end
   end
 

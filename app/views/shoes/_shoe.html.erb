@@ -1,0 +1,27 @@
+<tr>
+	<td class="korisnik_oglas_slika">
+		<% if shoe.slika_file_name %>
+		<% string_id = add_zeros(shoe.id) %>
+		<% izvor2="/system/shoes/slikas/000/000/"+string_id+"/thumb/"+shoe.slika_file_name %>
+		<% else %>
+		<% izvor2="/images/no photo thumb.png" %>	
+		<% end %>
+		<%= image_tag (izvor2), :id=>"slikica_na_profilu" %>
+	</td>
+	<td class="korisnik_oglas_info">
+		<b>Naslov:</b> <%= shoe.naslov %><br>
+		<b>Cijena:</b> <%= shoe.cijena %>kn<br> 
+		<b>Oglas predan:</b> <%= shoe.created_at.strftime("%d-%m-%Y") %>
+	</td>
+	
+	<td class="korisnik_oglas_linkovi">
+		<%= link_to "Detalji..", shoe %><br>
+		<% if current_user?(shoe.user) %>
+			<%= link_to "delete", shoe, method: :delete,
+ 			                                    data: { confirm: "You sure?" },
+ 			                                    title: shoe.marka %><br>
+			<%= link_to "edit", edit_shoe_path(shoe.id) %>
+		<% end %>
+	</td>
+
+</tr>
