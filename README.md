@@ -1,5 +1,5 @@
 <h1> SECOND HAND SKATEBOARDS </h1>
-<p style="font-size:14px">A classified ad application for skateboarding equipment I did with my friend Andrej Karavanic.</p>
+<p style="font-size:14px">A classified ad application for skateboarding equipment I did for practice with my friend Andrej Karavanic in the summer of 2012.</p>
 
 
 <h2>LOGIN PAGE:</h2>
